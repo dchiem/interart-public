@@ -22,6 +22,7 @@ class PiecesController < ApplicationController
     @comment.content = params[:comment]
     @comment.user_id = session[:user].to_i
     @comment.piece_version_id = params[:piece_version_id].to_i
+    @comment.save
     redirect_to "/pieces/" + @comment.piece_id.to_s
   end
 
