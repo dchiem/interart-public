@@ -1,0 +1,228 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body{
+  width:960px;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+#header{
+  background-color: black;
+  color:white;
+}
+
+#header a{
+  color:white;
+  text-decoration: none;
+}
+
+#header #title{
+  font-size:48px;
+  margin-left:50px;
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+
+#header #title, #header #action-list, #header div{
+  display:inline-block;
+}
+
+#header #action-list div{
+  margin-left:25px;
+}
+
+#header #action-list{
+  float:right;
+  margin-top:75px;
+  margin-right: 20px;
+  font-size: 28px;
+}
+
+#sign-up, #login{
+  margin-left:400px;
+  margin-top: 100px;
+}
+
+#home #results{
+  padding-top:20px;
+  padding-left:80px;
+}
+
+#home .piece{
+  display:inline-block;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+
+#home .piece img{
+  width:250px;
+  height:250px;
+  box-shadow: 5px 5px 10px #888,0px 0px 10px #888;
+}
+
+#home #tag-filter{
+  width:905px;
+  font-size: 28px;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:50px;
+  background:url("/assets/mag.png") no-repeat left;
+  background-size: 40px 40px;
+}
+
+#new-piece{
+  background-color: #dddddd;
+  padding-top: 20px;
+  padding-bottom:100px;
+}
+
+#new-piece #upload img{
+  width:100px;
+  height:100px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+#new-piece #upload #picture{
+  margin-left:30px;
+  margin-top: 20px;
+}
+
+#new-piece #upload{
+  margin-left:auto;
+  margin-right: auto;
+  width:200px;
+  height:200px;
+  border-radius:8px;
+  border:2px dashed black;
+  background-color: white;
+
+}
+
+#new-piece #text-fields .section{
+  margin-top:20px;
+  font-size: 20px;
+}
+
+#new-piece #text-fields input{
+  width:180px;
+  font-size: 14px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+#new-piece #text-fields{
+  margin-left:auto;
+  margin-right: auto;
+  width:200px;
+}
+
+#user-dash .tab:hover{
+  cursor:pointer;
+}
+
+#user-dash .tab{
+  font-size: 30px;
+  text-align:center;
+  display:inline-block;
+  width:477px;
+  background-color: black;
+  color:white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#user-dash .selected{
+  background-color: white;
+  color:black;
+}
+
+#user-dash #title{
+  font-size: 40px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom:2px solid black;;
+}
+
+#user-dash #tabs{
+  margin-bottom: 30px;
+}
+
+#user-dash .pieces{
+  padding-left: 70px;
+  padding-right:70px;
+}
+
+#user-dash .piece{
+  display:inline-block;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+
+#user-dash .piece img{
+  width:250px;
+  height:250px;
+  box-shadow: 5px 5px 10px #888,0px 0px 10px #888;
+}
+
+#piece-dash #title{
+  font-size: 40px;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+#piece-dash #author{
+  font-size: 24px;
+  padding-left: 40px;
+}
+
+#piece-dash .version img{
+  width:248px;
+  height:248px;
+}
+
+#piece-dash .version{
+  display:inline-block;
+  border:1px solid #aaaaaa;
+  margin-right:20px;
+  margin-bottom: 20px;
+}
+
+#piece-dash #versions{
+  padding-left: 70px;
+  padding-right:70px;
+  margin-top: 20px;
+}
+
+#piece-dash .current{
+  box-shadow: 5px 5px 10px #888,0px 0px 10px #888; 
+}
+
+#piece-dash #comments{
+  padding-left: 70px;
+  padding-right:70px;
+  margin-top: 20px;
+}
+
+#piece-dash .comment .commenter{
+  color:blue;
+}
+
+#piece-dash .comment{
+  border:1px solid #aaaaaa;
+  padding:10px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:3000/pieces/new -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Interart</title>
+  <link data-turbolinks-track="true" href="http://localhost:3000/assets/application.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/home.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/pieces.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/users.css?body=1" media="all" rel="stylesheet">
+  <script data-turbolinks-track="true" src="./Interart_files/jquery.js"></script>
+<script data-turbolinks-track="true" src="./Interart_files/jquery_ujs.js"></script>
+<script data-turbolinks-track="true" src="./Interart_files/turbolinks.js"></script>
+<script data-turbolinks-track="true" src="./Interart_files/home.js"></script>
+<script data-turbolinks-track="true" src="./Interart_files/pieces.js"></script>
+<script data-turbolinks-track="true" src="./Interart_files/users.js"></script>
+<script data-turbolinks-track="true" src="./Interart_files/application.js"></script>
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="06exjtp4NbqMEn10CiL8HB5HXlyqk6kZiuSm02TLOj8=" name="csrf-token">
+</head>
+<body>
+<div id="header">
+  <div id="title">interART</div>
+  <div id="action-list">
+    <div><a href="http://localhost:3000/home/landing">HOME</a></div>
+      <div><a href="http://localhost:3000/users/1">PROFILE</a></div>
+      <div><a href="./Interart_files/Interart.html">+UPLOAD</a></div>
+      <div><a href="http://localhost:3000/users/logout">LOG OUT</a></div>
+  </div>
+</div>
+
+<div id="new-piece">
+  <div id="upload">
+    <form accept-charset="UTF-8" action="./Interart_files/Interart.html" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="06exjtp4NbqMEn10CiL8HB5HXlyqk6kZiuSm02TLOj8="></div>
+      <div>
+        <img alt="Plus" src="./Interart_files/plus.jpeg">
+        <input id="picture" name="picture" type="file"> 
+      </div>
+</form>  </div>  
+  <div id="text-fields">
+    <div class="section">
+      <div>
+        <label for="title">Title</label>
+      </div>
+      <div>
+        <input id="title" name="title" placeholder="title your artwork" type="text">
+      </div>
+    </div>
+    <div class="section">
+      <div>
+        <label for="tags">Related Tags</label>
+      </div>
+      <div>
+        <input id="tags" name="tags" placeholder="Separated by commas" type="text">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body></html>

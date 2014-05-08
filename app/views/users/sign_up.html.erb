@@ -1,0 +1,8 @@
+<div id="sign-up">
+  <div>Sign up</div>
+  <%= form_tag "/users/sign_up_submit" do %>
+    <div><%= label_tag :username, "Username:" %></div>
+    <div><%= text_field_tag :username %></div>
+    <div><%= submit_tag "Sign up" %></div>
+  <% end %>
+</div>

@@ -1,0 +1,41 @@
+<div id="user-dash">
+  <div id="title"><%= @user.username %>'s portfolio</div>
+  <div id="tabs">
+    <div id="my-artwork" class="tab selected">MY ARTWORK</div>
+    <div id="my-comments" class="tab">MY COMMENTS</div>
+  </div>
+  <div id="my-pieces" class="pieces">
+    <% @user.pieces.each do |p| %>
+      <div class="piece">
+        <%= link_to (image_tag p.url), piece_path(p) %>
+      </div>
+    <% end %>
+  </div>
+  <div id="commented-pieces" class="pieces">
+    <% @user.commented_pieces.each do |p| %>
+      <div class="piece">
+        <%= link_to (image_tag p.url), piece_path(p) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $("#my-artwork").click(function(){
+    $('.tab').removeClass('selected');
+    $(this).addClass('selected');
+    $("#my-pieces").show();
+    $("#commented-pieces").hide();
+    return false;
+  });
+
+  $("#my-comments").click(function(){
+    $('.tab').removeClass('selected');
+    $(this).addClass('selected');
+    $("#commented-pieces").show();
+    $("#my-pieces").hide();
+    return false;
+  });
+      
+      
+</script>

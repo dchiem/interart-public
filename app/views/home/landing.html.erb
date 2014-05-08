@@ -1,0 +1,19 @@
+<div id="home">
+  <div>
+    <%= form_tag do %>
+      <%= text_field_tag :tag_filter, nil, :placeholder => "Filter by tag", :id => "tag-filter" %>
+    <% end %>
+  </div>
+  <div id="results">
+    <%= render "pieces/piece_grid", :pieces => Piece.all %>
+  </div>
+</div>
+
+<script>
+  $("#tag-filter").keyup(function(){
+    var tagInput = $(this).val();
+    $.get("/pieces/tag", {tag:tagInput}, function(data){
+      $("#results").html(data);
+    });
+  });
+</script>

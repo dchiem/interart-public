@@ -1,0 +1,21 @@
+<div id="piece-dash">
+  <div id="title"><%= @piece.title %></div>
+  <div id="author">By <%= @piece.user.username %></div>
+  <div id="versions">
+    <% @piece.piece_versions.each do |pv| %>
+      <div class="version <%= pv.version == @piece.piece_versions.length ? 'current' : '' %>">
+        <div>Version <%= pv.version %></div>
+        <%= link_to (image_tag pv.url), "/pieces/annotate/" + pv.id.to_s  %>
+      </div>
+    <% end %>
+  </div>
+  <div id="comments">
+    <div>Comments for version <%= @piece.piece_versions.last.version %></div>
+    <% @piece.piece_versions.last.comments.each do |c| %>
+      <div class="comment">
+        <div class="commenter"><%= c.user.username %> said:</div>
+        <div><%= c.content %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

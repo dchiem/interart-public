@@ -1,0 +1,35 @@
+<div id="new-piece">
+  <%= form_tag "/pieces/submit", :multipart => true do %>
+  
+  
+    <div id="upload">
+      <div>
+        <%= image_tag "plus.jpeg" %>
+        <%= file_field_tag 'picture' %> 
+      </div>
+    
+    </div>  
+    
+    <div id="text-fields">
+      <div class="section">
+        <div>
+          <%= label_tag :title, "Title" %>
+        </div>
+        <div>
+          <%= text_field_tag :title, nil, :placeholder => "title your artwork" %>
+        </div>
+      </div>
+      <div class="section">
+        <div>
+          <%= label_tag :tags, "Related Tags" %>
+        </div>
+        <div>
+          <%= text_field_tag :tags, nil, :placeholder => "Separated by commas" %>
+        </div>
+      </div>
+      <div class="section">
+        <%= submit_tag "Submit", :style => "margin-left:10px" %>
+      </div>
+    </div>
+  <% end %> 
+</div>

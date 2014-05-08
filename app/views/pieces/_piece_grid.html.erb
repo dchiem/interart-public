@@ -1,0 +1,5 @@
+<% pieces.each do |p| %>
+  <div class="piece">
+    <%= link_to (image_tag p.url), piece_path(p) %>
+  </div>
+<% end %>
