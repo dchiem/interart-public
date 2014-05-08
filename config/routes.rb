@@ -53,6 +53,8 @@ Interart::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  post 'pieces/new_piece_version' => "pieces#new_piece_version"
+  post 'pieces/annotate_submit' => "pieces#annotate_submit"
   post '/pieces/submit' => "pieces#submit"
   get 'pieces/annotate/:id' => "pieces#annotate"
   get '/pieces/tag' => "pieces#tag"

@@ -226,3 +226,8 @@ body{
   padding:10px;
   margin-bottom: 15px;
 }
+
+#piece-dash .new_version{
+  position:relative;
+  bottom:120px;
+}

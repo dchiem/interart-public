@@ -8,6 +8,20 @@
         <%= link_to (image_tag pv.url), "/pieces/annotate/" + pv.id.to_s  %>
       </div>
     <% end %>
+    <% if session[:user].to_i == @piece.user.id %>
+      <div class="version new_version">
+        <div class="label">
+          Upload new version:
+        </div>
+        <%= form_tag "/pieces/new_piece_version", :multipart => true do %>
+          <%= hidden_field_tag :piece_id, @piece.id %>
+          <%= file_field_tag :new_piece_version %>
+          <div class="label">
+            <%= submit_tag "Submit" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %> 
   </div>
   <div id="comments">
     <div>Comments for version <%= @piece.piece_versions.last.version %></div>

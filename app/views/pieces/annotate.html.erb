@@ -20,7 +20,9 @@
   <canvas id="paint"></canvas>
 </div>
 <div id="comment">
-  <%= form_tag do %>
+  <%= form_tag "/pieces/annotate_submit" do %>
+  <%= hidden_field_tag :piece_version_id, @piece_version.piece.id %>
+  <%= hidden_field_tag :piece_id, @piece_version.piece.id %>
     <div>Comments:</div>
     <div><%= text_area_tag :comment, nil, :id => "comment-field" %></div>
     <div><%= submit_tag "Save comment", :style => "margin-bottom:100px;" %></div>
