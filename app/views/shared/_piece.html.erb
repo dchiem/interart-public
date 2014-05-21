@@ -1,0 +1,33 @@
+<div class="piece">
+  <div class="img-cont">
+    <%= image_tag piece.url %>
+  </div>
+  <div class="cont">
+    <div class="name">
+      <%= piece.title %>
+    </div>
+    <div class="author">
+      by <%= piece.user.username %>
+    </div>
+    <div class="tags">
+      <%= piece.tags.map{|t| t.name}.join(",") %>
+    </div>
+  </div>
+  <div class="misc">
+    <div class="likes">
+      <%= image_tag "thumb.png" %>
+      <div class="num">
+        100
+      </div>
+    </div>
+    <div class="views">
+      <%= image_tag "eye.png" %>
+      <div class="num">
+        100
+      </div>
+    </div>
+    <div class="heart">
+      <%= image_tag "heart.png" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="art-feed">
+  <div class="title">
+    ARTFEED
+  </div>
+  <% if @category %>
+    <div class="category">
+      Category: <%= @category %>
+    </div>
+  <% end %>
+  <% if @tag %>
+    <div class="tag">
+      Tag: <%= @tag %>
+    </div>
+  <% end %>
+  <div class="pieces">
+    <% pieces.each do |p| %>
+      
+        <%= render "shared/piece", :piece => p %>
+      
+    <% end %>
+  </div>
+</div>

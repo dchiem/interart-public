@@ -3,6 +3,7 @@ class Piece < ActiveRecord::Base
   has_many :piece_versions
   has_many :comments, :through => :piece_versions
   has_and_belongs_to_many :tags
+  belongs_to :category
   
   def self.get_for_tag(tag)
     if tag == ""

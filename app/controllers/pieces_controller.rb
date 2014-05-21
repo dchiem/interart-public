@@ -6,7 +6,11 @@ class PiecesController < ApplicationController
     @piece = Piece.new
     @piece.title = params[:title]
     @piece.user_id = session[:user]
+    @piece.description = params[:description]
+    @piece.desired_feedback = params[:desired_feedback]
+    @piece.category_id = params[:category_id]
     @piece.save
+
     @piece.set_tags(params[:tags])
     @piece_version = PieceVersion.new
     @piece_version.version = 1
@@ -45,7 +49,23 @@ class PiecesController < ApplicationController
   end
 
   def tag
-    pieces = Piece.get_for_tag(params[:tag])
-    render :partial => "pieces/piece_grid", :locals => {:pieces => pieces}
+    if params[:tag]
+      pieces = Piece.get_for_tag(params[:tag])
+    else
+      pieces = Piece.all
+    end
+    puts '***************************'
+    puts params[:category].strip
+    @category = params[:category].strip
+    if @category == "CATEGORIES"
+      
+    elsif params[:category]
+      pieces = pieces.select{|p| p.category.name == params[:category].strip}
+    end
+
+    @tag = params[:tag]
+
+    
+    render :partial => "shared/feed", :locals => {:pieces => pieces}
   end
 end

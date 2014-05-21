@@ -3,6 +3,8 @@
   <%= form_tag "/users/login_submit" do %>
     <div><%= label_tag :username, "Username:" %></div>
     <div><%= text_field_tag :username %></div>
+    <div><%= label_tag :password, "Password:" %></div>
+    <div><%= password_field_tag :password %></div>
     <div><%= submit_tag "Login" %></div>
   <% end %>
 </div>

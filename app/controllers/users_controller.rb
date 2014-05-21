@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Username " + params[:username] + " already exists"
       redirect_to "/users/sign_up"
     else
-      u = User.create(:username => params[:username])
+      u = User.create(:username => params[:username], :email => params[:email], :password => Digest::MD5.hexdigest(params[:password]))
       session[:user] = u.id
       redirect_to user_path(u)
     end
@@ -31,9 +31,13 @@ class UsersController < ApplicationController
       flash[:notice] = "Could not find username " + params[:username]
       redirect_to "/users/login"
       return
-    else
+    elsif Digest::MD5.hexdigest(params[:password]) == u.password
       session[:user] = u.id
       redirect_to user_path(u)
+    else
+      flash[:notice] = "incorrect password"
+      redirect_to "/users/login"
+      return
     end
   end
 

@@ -1,0 +1,86 @@
+<div id="header">
+  <div class="search">
+    <div class="categories-button">
+      <div class="text">
+        CATEGORIES
+      </div>
+      <div class="down-arrow">
+        
+      </div>
+    </div>
+    <div class="cat-dropdown">
+      <% Category.all.each do |c| %>
+        <div class="cat-item">
+          <%= c.name %>
+        </div>
+      <% end %>
+    </div>
+    <div class="tag">
+      <%= form_tag do %>
+        <%= text_field_tag :tag, nil, :placeholder => "search by tag", :id => "tag-field" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="title">
+    <span class="bold">INTER</span>ART
+  </div>
+  <div class="nav">
+    
+    <% if current_user %>
+      <%= link_to "/users/logout" do %>
+        <div class="logout">
+          <%= image_tag "door.png" %>
+          <div class="word">
+            LOGOUT
+          </div>
+        </div>
+      <% end %>  
+      <%= link_to "/pieces/new" do %>
+        <div class="upload">
+          <%= image_tag "plus.png" %>
+          <div class="word">
+            UPLOAD
+          </div>
+        </div>
+      <% end %>
+      
+      <%= link_to user_path(current_user) do %>
+        <div class="profile">
+          <%= image_tag "luggage.png" %>
+          <div class="word">
+            HARRY
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      
+      <%= link_to "/users/login" do %>
+        <div class="login">
+          <%= image_tag "key.png" %>
+          <div class="word">
+            LOGIN
+          </div>
+        </div>
+      <% end %>
+      <%= link_to "/users/sign_up" do %>
+        <div class="signup">
+          <%= image_tag "plus.png" %>
+          <div class="word">
+            SIGN UP
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <%= link_to "/" do %>
+      <div class="home">
+        <%= image_tag "home.png" %>
+        <div class="word">
+          HOME
+        </div>
+      </div>
+    <% end %> 
+    
+    
+  </div>
+    
+</div>

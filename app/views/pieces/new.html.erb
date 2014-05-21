@@ -21,10 +21,33 @@
       </div>
       <div class="section">
         <div>
+          <%= label_tag :title, "Category" %>
+        </div>
+        <div>
+          <%= select_tag(:category_id, options_for_select(Category.all.collect {|a| [a.name, a.id]})) %>
+        </div>
+      </div>
+      <div class="section">
+        <div>
           <%= label_tag :tags, "Related Tags" %>
         </div>
         <div>
           <%= text_field_tag :tags, nil, :placeholder => "Separated by commas" %>
+        </div>
+      </div>
+      <div class="section">
+        <div>
+          <%= label_tag :description, "Describe your piece of art" %>
+        </div>
+        <div>
+          <%= text_area_tag :description, nil, :placeholder => "Description of piece here" %>
+        </div>
+      </div><div class="section">
+        <div>
+          <%= label_tag :desired_feedback, "Describe what kind of feedback you are looking for. For example technique or inspiration or direction etc" %>
+        </div>
+        <div>
+          <%= text_area_tag :desired_feedback, nil, :placeholder => "Describe desired feedback here" %>
         </div>
       </div>
       <div class="section">

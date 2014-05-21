@@ -11,43 +11,279 @@
  *= require_self
  *= require_tree .
  */
+
 body{
-  width:960px;
-  margin-left:auto;
-  margin-right: auto;
+  font-family:"proxima-nova";
+  margin:0px;
 }
 
+/*heaer stuff*/
 #header{
-  background-color: black;
-  color:white;
+  height:80px;
+  background-color: #CCCCCC;
 }
 
-#header a{
-  color:white;
-  text-decoration: none;
+#header .cat-dropdown{
+  display:none;
+  position:absolute;
+  top:54px;
+  left:20px;
+  background-color: white;
+  border-radius:3px;
+  border:1px solid black;
+  width:200px;
+  z-index:10;
+  padding:3px;
 }
 
-#header #title{
-  font-size:48px;
-  margin-left:50px;
-  padding-top:30px;
-  padding-bottom: 30px;
+#header .cat-dropdown .cat-item:hover{
+  background-color: #eeeeee;
+  border:1px solid #bbbbbb;
 }
 
-#header #title, #header #action-list, #header div{
+#header .cat-dropdown .cat-item{
+  display:block;
+  padding:5px;
+
+}
+
+
+
+#header .categories-button{
+  position: relative;
+}
+
+#header .search{
+  position: relative;
+  width:400px;
+  display:inline-block;
+  float:left;
+}
+
+#header .nav{
+  width:600px;
+  display:inline-block;
+  float:right;
+}
+
+#header .title{
+  width:300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+#header .bold{
+  font-weight:bold;
+  
+}
+
+#header .categories-button div:not(.cat-dropdown):not(.cat-item){
   display:inline-block;
 }
 
-#header #action-list div{
-  margin-left:25px;
+#header .categories-button{
+  background:white;
+  border-radius:4px;
+  border:1px solid black;
+  padding:5px;
+  width:130px;
+  display:inline-block;
 }
 
-#header #action-list{
-  float:right;
-  margin-top:75px;
-  margin-right: 20px;
-  font-size: 28px;
+#header .tag{
+  display:inline-block;
+
 }
+
+#header #tag-field{
+  padding:5px;
+  font-size: 16px;
+  border-radius:4px;
+  border:1px solid black;
+  width:240px;
+  background-image:;
+  background:url("/assets/mag.png") no-repeat right;
+  background-size: 20px 20px;
+  background-color: white;
+  background-position-x:223px;
+  position:relative;
+  top:1px;
+}
+
+#header .nav{
+  position:relative;
+  bottom:32px;
+  color:white;
+}
+
+#header .nav img{
+  width:30px;
+  height:30px;
+  
+}
+
+#header .nav a > div{
+  margin-right: 30px;
+  color:white;
+}
+
+
+
+#header .nav div{
+  float:right;
+  height:30px;
+}
+
+#header .nav .word{
+  position:relative;
+  bottom:28px;
+}
+
+.nav .home{
+  border-bottom:3px solid green;
+}
+
+.nav .signup{
+  border-bottom:3px solid blue;
+}
+
+.nav .login{
+  border-bottom:3px solid red;
+}
+
+.nav .profile{
+  border-bottom:3px solid purple; 
+}
+
+.nav .upload{
+  border-bottom:3px solid red;
+}
+
+.nav .logout{
+  border-bottom:3px solid blue;
+}
+
+#header .down-arrow{
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-top: 5px solid #000;
+  position:relative;
+  bottom:3px;
+  left:4px;
+}
+
+#header .search{
+  padding-top:20px;
+  padding-left:20px;
+}
+/*end header stuff*/
+
+
+
+/*feed stuff*/
+#home{
+  width:1050px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+}
+.art-feed{
+  background-color: #E0DFD9;
+  width:1025px;
+  padding-left: 25px;
+}
+
+.art-feed .category, .art-feed .tag{
+  margin-left:480px;
+  font-size: 18px;
+}
+
+.art-feed .title{
+  margin-left:480px;
+  font-size: 28px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.pieces{
+  margin-top: 10px;
+}
+
+.piece .img-cont img{
+  width:210px;
+  height:210px;
+    padding:8px 8px 8px 8px;
+}
+
+.misc .likes{
+  width:70px;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.misc .num{
+  position:relative;
+  bottom:4px;
+}
+
+.misc{
+  border-top:2px solid #555555;
+  background-color: #ebebeb;
+}
+
+.misc .heart{
+  border-left:2px solid #555555;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.misc .views{
+  width:100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.art-feed .misc div{
+  display:inline-block;
+}
+
+.art-feed .piece{
+  display:inline-block;
+  margin-right:20px;
+  margin-bottom:20px;
+  background-color: white;
+  border-radius:0px 0px 5px 5px;
+  overflow:hidden;
+  border:2px solid #aaaaaa;
+}
+
+.art-feed .piece .name{
+  font-size: 18px;
+  font-weight:bold;
+}
+
+.art-feed .cont{
+  padding:10px;
+  padding-top:0px;
+}
+
+.misc img{
+  width:30px;
+  height:20px;
+}
+.likes img{
+  width:20px;
+}
+
+
+/* end feed stuff*/
 
 #sign-up, #login{
   margin-left:400px;
@@ -60,16 +296,9 @@ body{
 }
 
 #home .piece{
-  display:inline-block;
-  margin-right:20px;
-  margin-bottom:20px;
+  width:226px;
 }
 
-#home .piece img{
-  width:250px;
-  height:250px;
-  box-shadow: 5px 5px 10px #888,0px 0px 10px #888;
-}
 
 #home #tag-filter{
   width:905px;
@@ -108,6 +337,15 @@ body{
   border:2px dashed black;
   background-color: white;
 
+}
+
+#new-piece .section textarea{
+  height:100px;
+  width:200px;
+}
+
+#new-piece #text-fields .section label{
+  font-size: 14px !important;
 }
 
 #new-piece #text-fields .section{
