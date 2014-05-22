@@ -50,8 +50,12 @@ class PiecesController < ApplicationController
 
   def show
     @piece = Piece.find(params[:id])
+    if @piece.view_count == nil
+      @piece.view_count = 1
+    else
+      @piece.view_count += 1
+    end
     
-    @piece.view_count += 1
     @piece.save
   end
 
