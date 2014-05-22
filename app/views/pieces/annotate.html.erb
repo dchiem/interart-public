@@ -244,8 +244,8 @@ $(document).ready(function(){
 
   image.onload = imageLoaded;
   image.crossOrigin = 'anonymous';
-  // image.src = "<%= @piece_version.url %>";
-  image.src = "/eye.png";
+  image.src = "<%= @piece_version.url %>";
+  // image.src = "/eye.png";
   $("#save").click(function(){
     
     var comment = $("#comment-field").val();
