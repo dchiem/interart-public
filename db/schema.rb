@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521185108) do
+ActiveRecord::Schema.define(version: 20140522054511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 20140521185108) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "like_count"
+    t.string   "edit_img_file_name"
+    t.string   "edit_img_content_type"
+    t.integer  "edit_img_file_size"
+    t.datetime "edit_img_updated_at"
   end
 
   create_table "piece_likes", force: true do |t|

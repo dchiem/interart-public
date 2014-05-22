@@ -45,11 +45,28 @@
       <div class="comments">
         <% @piece.piece_versions.last.comments.each do |c| %>
           <div class="comment">
-            <div class="commenter"><%= c.user.username %> said:</div>
-            <div><%= c.content %></div>
+            <div class="comment-img">
+              <%= image_tag c.edit_img(:square) %>
+            </div>
+            <div class="right">
+              <div class="commenter"><%= c.user.username %> said:</div>
+              <div><%= c.content %></div>
+            </div>
+            <div class="popup">
+              <div class="im">
+                <%= image_tag c.edit_img(:square) %>
+              </div>
+              <div class="commenter-bio">
+                Commenter Artist Bio: <%= c.user.artist_bio %>
+              </div>
+              <div class="commenter-portfolio">
+                <%= link_to "Commenter portfolio", c.user.portfolio_link %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+

@@ -48,6 +48,25 @@ class PiecesController < ApplicationController
     redirect_to "/pieces/" + @piece.id.to_s
   end
 
+  def edited
+    @comment = Comment.new
+    @comment.content = params[:com]
+    @comment.piece_version_id = params[:pvid]
+    @comment.user_id = session[:user]
+    @comment.piece_id = PieceVersion.find(params[:pvid]).piece.id
+    @comment.save
+
+
+    require 'base64'
+
+    data = params[:img]
+    # // remove all extras except data
+    image_data = Base64.decode64(data['data:image/png;base64,'.length .. -1])
+    @comment.set_image(image_data)
+    @comment.save
+    render :text => "OK"
+  end
+
   def show
     @piece = Piece.find(params[:id])
     if @piece.view_count == nil

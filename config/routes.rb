@@ -54,6 +54,7 @@ Interart::Application.routes.draw do
   #     resources :products
   #   end
   get 'pieces/heart/:id' => "pieces#heart" 
+  post '/pieces/edited' => "pieces#edited"
   post 'pieces/new_piece_version' => "pieces#new_piece_version"
   post 'pieces/annotate_submit' => "pieces#annotate_submit"
   post '/pieces/submit' => "pieces#submit"
