@@ -1,33 +1,41 @@
-<div class="piece">
-  <div class="img-cont">
-    <%= image_tag piece.url %>
-  </div>
-  <div class="cont">
-    <div class="name">
-      <%= piece.title %>
+<%= link_to piece_path(piece) do %>
+  <div class="piece" piece-id="<%= piece.id %>">
+    <div class="img-cont">
+      <%= image_tag piece.url %>
     </div>
-    <div class="author">
-      by <%= piece.user.username %>
-    </div>
-    <div class="tags">
-      <%= piece.tags.map{|t| t.name}.join(",") %>
-    </div>
-  </div>
-  <div class="misc">
-    <div class="likes">
-      <%= image_tag "thumb.png" %>
-      <div class="num">
-        100
+    <div class="cont">
+      <div class="name">
+        <%= piece.title %>
+      </div>
+      <div class="author">
+        by <%= piece.user.username %>
+      </div>
+      <div class="tags">
+        <%= piece.tags.map{|t| t.name}.join(",") %>
       </div>
     </div>
-    <div class="views">
-      <%= image_tag "eye.png" %>
-      <div class="num">
-        100
+    <div class="misc">
+      <div class="likes">
+        <%= image_tag "thumb.png" %>
+        <div class="num">
+          <%= piece.piece_likes.length %>
+        </div>
+      </div>
+      <div class="views">
+        <%= image_tag "eye.png" %>
+        <div class="num">
+          <%= piece.view_count %>
+        </div>
+      </div>
+      <div class="heart">
+        <% if piece.is_liked_by(current_user) %>
+        <%= image_tag "heart.png", :style => "display:none", :class => "empty-heart" %>
+        <%= image_tag "full-heart.png", :class => "full-heart" %>
+        <% else %>
+        <%= image_tag "heart.png", :class => "empty-heart" %>
+        <%= image_tag "full-heart.png", :style => "display:none", :class => "full-heart"%>
+        <% end %>
       </div>
     </div>
-    <div class="heart">
-      <%= image_tag "heart.png" %>
-    </div>
   </div>
-</div>
+<% end %>

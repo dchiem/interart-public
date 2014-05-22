@@ -1,39 +1,31 @@
 <div id="user-dash">
-  <div id="title"><%= @user.username %>'s portfolio</div>
-  <div id="tabs">
-    <div id="my-artwork" class="tab selected">MY ARTWORK</div>
-    <div id="my-comments" class="tab">MY COMMENTS</div>
-  </div>
-  <div id="my-pieces" class="pieces">
-    <% @user.pieces.each do |p| %>
-      <div class="piece">
-        <%= link_to (image_tag p.url), piece_path(p) %>
+  <div class="top">
+    <div class="title2">
+      YOUR PORTFOLIO
+    </div>
+    <div class="info">
+      <%= link_to "My profile", "#", :id => "profile-link" %>
+      <div class="info-full">
+        <div class="desc">Artist Bio: <%= current_user.artist_bio %></div>
+        <div class="port-link">
+          Portfolio Link: <%= current_user.portfolio_link %>
+        </div>
+        <div class="edit-profile">
+          <%= link_to "Edit profile", edit_user_path(current_user) %>
+        </div>
       </div>
-    <% end %>
+    </div>
   </div>
-  <div id="commented-pieces" class="pieces">
-    <% @user.commented_pieces.each do |p| %>
-      <div class="piece">
-        <%= link_to (image_tag p.url), piece_path(p) %>
-      </div>
-    <% end %>
+  <div class="x">
+    <%= render "users/section", :title => "Your Artwork", :pieces => current_user.pieces %>
+  <%= render "users/section", :title => "Favorited", :pieces => current_user.liked_pieces %>
+  <%= render "users/section", :title => "Commented", :pieces => current_user.commented_pieces %>
   </div>
 </div>
 
 <script>
-  $("#my-artwork").click(function(){
-    $('.tab').removeClass('selected');
-    $(this).addClass('selected');
-    $("#my-pieces").show();
-    $("#commented-pieces").hide();
-    return false;
-  });
-
-  $("#my-comments").click(function(){
-    $('.tab').removeClass('selected');
-    $(this).addClass('selected');
-    $("#commented-pieces").show();
-    $("#my-pieces").hide();
+  $("#profile-link").click(function(){
+    $(".info-full").show();
     return false;
   });
       

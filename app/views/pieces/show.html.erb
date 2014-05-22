@@ -1,6 +1,17 @@
 <div id="piece-dash">
-  <div id="title"><%= @piece.title %></div>
-  <div id="author">By <%= @piece.user.username %></div>
+  <div class="details">
+    <div class="left">
+      <div id="title"><%= @piece.title %></div>
+      <div id="author">By <%= @piece.user.username %></div>   
+    </div>
+    <div class="middle">
+      Author's description of piece: <%= @piece.description %>
+    </div>
+    <div class="right">
+      I'm looking for feedback on: <%= @piece.desired_feedback %>
+    </div>
+  </div>
+  
   <div id="versions">
     <% @piece.piece_versions.each do |pv| %>
       <div class="version <%= pv.version == @piece.piece_versions.length ? 'current' : '' %>">
@@ -23,12 +34,21 @@
       </div>
     <% end %> 
   </div>
-  <div id="comments">
-    <div>Comments for version <%= @piece.piece_versions.last.version %></div>
-    <% @piece.piece_versions.last.comments.each do |c| %>
-      <div class="comment">
-        <div class="commenter"><%= c.user.username %> said:</div>
-        <div><%= c.content %></div>
+  <% if @piece.piece_versions.last.comments.length == 0 %>
+    <div style="margin-left:200px">No comments yet</div>
+    <div  style="margin-left:200px">
+      <%= link_to "Add comment and edits", "/pieces/annotate/" + @piece.piece_versions.last.id.to_s %>
+    </div>
+  <% else %>
+    <div id="comments">
+      <div class='title'>Feedback for version <%= @piece.piece_versions.last.version %> <%= link_to "Add comment and edits", "/pieces/annotate/" + @piece.piece_versions.last.id.to_s %></div>
+      <div class="comments">
+        <% @piece.piece_versions.last.comments.each do |c| %>
+          <div class="comment">
+            <div class="commenter"><%= c.user.username %> said:</div>
+            <div><%= c.content %></div>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

@@ -4,7 +4,22 @@ class Piece < ActiveRecord::Base
   has_many :comments, :through => :piece_versions
   has_and_belongs_to_many :tags
   belongs_to :category
-  
+  has_many :piece_likes  
+  after_initialize :init
+
+def init
+  view_count ||= 0
+  end
+
+  def is_liked_by(u)
+    piece_likes.each do |pl|
+      if pl.user_id == u.id
+        return true
+      end
+    end
+    return false
+  end
+
   def self.get_for_tag(tag)
     if tag == ""
       return Piece.all

@@ -1,0 +1,14 @@
+<div class="section">
+  <div class="title">
+    <%= title %>
+  </div>
+  <div class="pieces">
+    <% pieces.each do |p| %>
+      <%= link_to piece_path(p) do %>
+        <div class="piece">
+          <%= image_tag p.url %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

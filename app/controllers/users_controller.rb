@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   def sign_up
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user].permit(:artist_bio, :portfolio_link))
+    redirect_to user_path(@user)
+  end
+
   def sign_up_submit
     u = User.find_by_username(params[:username])
     if u != nil
@@ -20,6 +26,10 @@ class UsersController < ApplicationController
       session[:user] = u.id
       redirect_to user_path(u)
     end
+  end
+
+  def edit
+
   end
 
   def login

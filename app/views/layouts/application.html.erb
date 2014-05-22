@@ -46,6 +46,16 @@ $("#tag-field").keyup(function(){
   return false;
 });
 
+$(".empty-heart").click(function(){
+  $(this).hide();
+  $(this).parents(".heart").find(".full-heart").show();
+  var pieceId = $(this).parents(".piece").attr("piece-id");
+  $.get("/pieces/heart/" + pieceId, function(){
+
+  });
+  return false;
+});
+    
 
 $("body").click(function(){
   $(".cat-dropdown").hide();

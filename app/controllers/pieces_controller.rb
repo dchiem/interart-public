@@ -2,6 +2,14 @@ class PiecesController < ApplicationController
   def new
   end
 
+  def heart
+    @piece = Piece.find(params[:id])
+    pl = PieceLike.new
+    pl.piece_id = @piece.id
+    pl.user_id = session[:user]
+    pl.save
+  end
+
   def submit
     @piece = Piece.new
     @piece.title = params[:title]
@@ -42,6 +50,9 @@ class PiecesController < ApplicationController
 
   def show
     @piece = Piece.find(params[:id])
+    
+    @piece.view_count += 1
+    @piece.save
   end
 
   def annotate

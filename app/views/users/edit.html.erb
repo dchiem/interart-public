@@ -1,0 +1,9 @@
+<div id="edit-user">
+  <%= form_for(current_user) do |f| %>
+  <div><%= f.label :artist_bio, "Describe yourself as an artist in 2-4 sentences (hobbyist vs professional, experience, styles of art etc" %></div>
+  <div><%= f.text_area :artist_bio %></div>
+  <div><%= f.label :portfolio_link, "Link to your online portfolio" %></div>
+  <div><%= f.text_field :portfolio_link,:height => 10 %></div>
+  <div><%= f.submit "Save" %></div>
+<% end %>
+</div>
