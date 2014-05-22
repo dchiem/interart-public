@@ -165,7 +165,7 @@ body{
   border:1px solid black;
   width:240px;
   
-  background:url("/assets/mag.png"); no-repeat right;
+  background:url("/assets/mag.png") no-repeat right;
   background-size: 20px 20px;
   background-color: white;
   background-position-x:223px;
