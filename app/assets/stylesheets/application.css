@@ -23,7 +23,8 @@
 body{
   /*font-family:"proxima-nova";*/
   margin:0px;
-  font-family:'ProximaNova';
+  /*font-family:'ProximaNova';*/
+  font-family: "helvetica", "arial";
 }
 
 /*piece show*/
