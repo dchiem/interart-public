@@ -1,72 +1,139 @@
 <div id="piece-dash">
-  <div class="details">
-    <div class="left">
-      <div id="title"><%= @piece.title %></div>
-      <div id="author">By <%= @piece.user.username %></div>   
-    </div>
-    <div class="middle">
-      Author's description of piece: <%= @piece.description %>
-    </div>
-    <div class="right">
-      I'm looking for feedback on: <%= @piece.desired_feedback %>
-    </div>
-  </div>
-  
-  <div id="versions">
-    <% @piece.piece_versions.each do |pv| %>
-      <div class="version <%= pv.version == @piece.piece_versions.length ? 'current' : '' %>">
-        <div>Version <%= pv.version %></div>
-        <%= link_to (image_tag pv.url), "/pieces/annotate/" + pv.id.to_s  %>
+  <div id="left">
+    <div id="left-cont">
+      <div class="label">
+        <%= @piece.title %>
       </div>
-    <% end %>
-    <% if session[:user].to_i == @piece.user.id %>
-      <div class="version new_version">
-        <div class="label">
-          Upload new version:
-        </div>
-        <%= form_tag "/pieces/new_piece_version", :multipart => true do %>
-          <%= hidden_field_tag :piece_id, @piece.id %>
-          <%= file_field_tag :new_piece_version %>
-          <div class="label">
-            <%= submit_tag "Submit" %>
-          </div>
+      <div class="ht heart" piece-id="<%= @piece.id %>">
+        <% if @piece.is_liked_by(current_user) %>
+        <%= image_tag "heart.png", :style => "display:none", :class => "empty-heart" %>
+        <%= image_tag "full-heart.png", :class => "full-heart" %>
+        <% else %>
+        <%= image_tag "heart.png", :class => "empty-heart" %>
+        <%= image_tag "full-heart.png", :style => "display:none", :class => "full-heart"%>
         <% end %>
+        <div class="heart-count">
+          <%= @piece.piece_likes.length %>
+        </div>
       </div>
-    <% end %> 
-  </div>
-  <% if @piece.piece_versions.last.comments.length == 0 %>
-    <div style="margin-left:200px">No comments yet</div>
-    <div  style="margin-left:200px">
-      <%= link_to "Add comment and edits", "/pieces/annotate/" + @piece.piece_versions.last.id.to_s %>
     </div>
-  <% else %>
+    <div id="author">
+      By <%= @piece.user.username %>
+    </div>
+    <div id="description">
+      <div class="label">
+        Description
+      </div>
+      <div class="content">
+        <%= @piece.description %>
+      </div>
+    </div>
+    <div id="desired-feedback">
+      <div class="label">
+        Desired Feedback
+      </div>
+      <div class="content">
+        <%= @piece.desired_feedback %>
+      </div>
+    </div>
+  </div>
+  <div id="right">
+
+    <div id="versions">
+      <% @piece.piece_versions.each do |pv| %>
+        <div class="version <%= pv.version == @piece.piece_versions.length ? 'current' : '' %>">
+          <div>Version <%= pv.version %></div>
+          <div class="x" style="display:inline-block">
+            <%= image_tag pv.url %>  
+          </div>
+        </div>
+      <% end %>
+      
+      <% if session[:user].to_i == @piece.user.id %>
+        <div class="version new_version">
+          <div class="label">
+            Upload new version:
+          </div>
+          <div class="tet">
+            <%= form_tag "/pieces/new_piece_version", :multipart => true do %>
+              <%= hidden_field_tag :piece_id, @piece.id %>
+              <div><%= file_field_tag :new_piece_version %></div>
+              <div><%= text_area_tag :new_desired_feedback, nil, :placeholder=> "Updated desired feedback", :class => "xz" %></div>
+              <div class="label">
+                <%= submit_tag "Submit" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <div id="comments">
-      <div class='title'>Feedback for version <%= @piece.piece_versions.last.version %> <%= link_to "Add comment and edits", "/pieces/annotate/" + @piece.piece_versions.last.id.to_s %></div>
-      <div class="comments">
-        <% @piece.piece_versions.last.comments.each do |c| %>
-          <div class="comment">
-            <div class="comment-img">
-              <%= image_tag c.edit_img(:square) %>
-            </div>
-            <div class="right">
-              <div class="commenter"><%= c.user.username %> said:</div>
-              <div><%= c.content %></div>
-            </div>
-            <div class="popup">
-              <div class="im">
+      <div id="heading">
+        Comments:
+      </div>
+      <% if @piece.piece_versions.last.comments.length == 0 %>
+        <div class="no">
+          No comments yet.
+        </div>
+      <% else %>
+        <div id="comments-cont">
+          <% @piece.piece_versions.last.comments.each do |c| %>  
+            <div class="comment">
+              <div class="edited-img">
                 <%= image_tag c.edit_img(:square) %>
               </div>
-              <div class="commenter-bio">
-                Commenter Artist Bio: <%= c.user.artist_bio %>
+              <div class="content">
+                <div class="commenter">
+                  <%= c.user.username %>
+                </div>
+                <div class="text">
+                  <%= c.content %>
+                </div>
               </div>
-              <div class="commenter-portfolio">
-                <%= link_to "Commenter portfolio", c.user.portfolio_link %>
+              <div class="popup">
+                <%= image_tag c.edit_img(:square) %>
+                <% if c.user.artist_bio != nil %>
+                  Artist bio: <%= c.user.artist_bio %>
+                <% end %>
+                <% if c.user.portfolio_link != nil %>
+                  Portfolio: <%= link_to c.user.portfolio_link %>
+                <% end %>
               </div>
             </div>
-          </div>
-        <% end %>
+
+          <% end %>
+        </div>
+      <% end %>
+      <div class="pr">
+        Add comment by:
       </div>
-    <% end %>
+      <%= form_tag do %>
+        <div class="opt">
+          <%= link_to "Download to edit with your own tool", "/pieces/download/" + @piece.id.to_s , :class => "sx1" %>
+        </div>
+        <span style="color:#444444">and then</span>
+        <div class="opt">
+          <%= link_to "Upload suggested changes", "/pieces.upload/" + @piece.id.to_s %>
+        </div>
+        <div style="margin-left:280px;font-size:28px;color:#444444;margin-top:30px;margin-bottom:20px;">or</div>
+        <div class="opt">
+          <%= submit_tag "Edit online with Interart tool", :class => 'sx2' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
+
+<script type="text/javascript">
+  
+$(".sx1").click(function(){
+
+  // return false;
+});
+
+$(".sx2").click(function(){
+  window.location = "/pieces/annotate/<%= @piece.piece_versions.last.id %>";
+  return false;
+});
+</script>

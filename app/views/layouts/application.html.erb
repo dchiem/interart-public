@@ -56,7 +56,7 @@ $("#tag-field").keyup(function(){
 
 
 
-$(".empty-heart").click(function(){
+$(".piece .empty-heart").click(function(){
   $(this).hide();
   $(this).parents(".heart").find(".full-heart").show();
   var count = parseInt($(this).parents(".heart").find(".heart-count").html());
@@ -69,10 +69,26 @@ $(".empty-heart").click(function(){
   return false;
 });
     
+$("#piece-dash .empty-heart").click(function(){
+  $(this).hide();
+  $(this).parents(".heart").find(".full-heart").show();
+  var count = parseInt($(this).parents(".heart").find(".heart-count").html());
+
+  $(this).parents(".heart").find(".heart-count").html(count + 1);
+  var pieceId = $(this).parents(".heart").attr("piece-id");
+  $.get("/pieces/heart/" + pieceId, function(){
+
+  });
+  return false;
+});
+
 
 $("body").click(function(){
   $(".cat-dropdown").hide();
 });
+
+
+    
 
 
 </script>

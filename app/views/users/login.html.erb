@@ -1,10 +1,12 @@
+<%= render "shared/intro" %>
 <div id="login">
-  <div>Login</div>
+  <div id="title">Login</div>
   <%= form_tag "/users/login_submit" do %>
-    <div><%= label_tag :username, "Username:" %></div>
-    <div><%= text_field_tag :username %></div>
-    <div><%= label_tag :password, "Password:" %></div>
-    <div><%= password_field_tag :password %></div>
-    <div><%= submit_tag "Login" %></div>
+    
+    <div><%= text_field_tag :username, nil, :placeholder =>" Username" %></div>
+    
+    <div><%= password_field_tag :password,nil, :placeholder => "Password" %></div>
+    <div><%= submit_tag "Login", :style => "width:293px;border-radius:8px;color:white;background:black" %></div>
+    <div style="margin-top:10px;font-size:20px;">Don't have an account? <%= link_to "Sign Up", "/users/sign_up" %></div>
   <% end %>
 </div>

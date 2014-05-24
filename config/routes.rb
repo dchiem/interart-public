@@ -53,6 +53,8 @@ Interart::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get 'pieces/upload' => "pieces#upload"
+  get 'pieces/download' => "pieces#download"
   get 'pieces/heart/:id' => "pieces#heart" 
   post '/pieces/edited' => "pieces#edited"
   post 'pieces/new_piece_version' => "pieces#new_piece_version"

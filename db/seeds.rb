@@ -8,11 +8,20 @@
 
 # make categories
 c1 = Category.new
-c1.name = "Animals"
+c1.name = "Painting"
 c1.save
 c2 = Category.new
-c2.name = "People"
+c2.name = "Drawing"
 c2.save
 c3 = Category.new
-c3.name = "Abstract"
+c3.name = "Photography"
 c3.save
+c4 = Category.new
+c4.name = "Architecture"
+c4.save
+c5 = Category.new
+c5.name = "Design"
+c5.save
+c6 = Category.new
+c6.name = "Mixed-Media"
+c6.save

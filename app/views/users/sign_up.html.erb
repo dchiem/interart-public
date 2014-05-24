@@ -1,12 +1,14 @@
+<%= render "shared/intro" %>
 <div id="sign-up">
-  <div>Sign up</div>
+  <div id='title'>Sign up</div>
   <%= form_tag "/users/sign_up_submit" do %>
-    <div><%= label_tag :username, "Username:" %></div>
-    <div><%= text_field_tag :username %></div>
-    <div><%= label_tag :email, "Email:" %></div>
-    <div><%= text_field_tag :email %></div>
-    <div><%= label_tag :password, "Password:" %></div>
-    <div><%= text_field_tag :password %></div>
-    <div><%= submit_tag "Sign up" %></div>
+    
+    <div><%= text_field_tag :username, nil, :placeholder => "Username" %></div>
+    
+    <div><%= text_field_tag :email, nil, :placeholder => "Email" %></div>
+    
+    <div><%= text_field_tag :password, nil, :placeholder => "Password" %></div>
+    <div><%= submit_tag "Sign up", :id => "sign-up-button" %></div>
+    <div style="margin-top:10px;font-size:20px;">Already have an account? <%= link_to "Login", "/users/login" %></div>
   <% end %>
 </div>

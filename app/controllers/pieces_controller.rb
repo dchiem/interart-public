@@ -1,5 +1,6 @@
 class PiecesController < ApplicationController
   def new
+    @page = "upload"
   end
 
   def heart
@@ -89,6 +90,16 @@ class PiecesController < ApplicationController
       "#330066","#9900cc","#cc33ff","#cc66ff",
       "#000000", "#888888","#bbbbbb","#ffffff"]
     @thicks = ["small", "medium", "large", "huge"]
+  end
+
+  def download
+    data = open(Piece.find(params[:id]).piece_versions.last.piece_img(:square))
+    send_data data.read , :filename => "interat_piece_" + params[:id],:type => data.content_type, :x_sendfile => true
+    
+  end
+
+  def upload
+    @piece = Piece.find(params[:id])
   end
 
   def tag

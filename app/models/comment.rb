@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :piece_version
   belongs_to :user
   has_attached_file :edit_img, :styles => {
-    square: '400x400>'
+    square: '800x800>'
   }
   validates_attachment :edit_img, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   def set_image(d)

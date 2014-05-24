@@ -5,5 +5,6 @@ class HomeController < ApplicationController
       return
     end
     @show_filters = true
+    @page = "home"
   end
 end

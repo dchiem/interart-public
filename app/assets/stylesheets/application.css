@@ -20,6 +20,8 @@
   
 }
 
+
+
 #annotate{
   background-color: black;
 }
@@ -157,6 +159,29 @@ body{
   padding:3px;
 }
 
+.ht img{
+  height:30px;
+  width:30px;
+}
+
+.ht{
+  float:right;
+  position:relative;
+  right:10px;
+}
+
+#left-cont .heart-count{
+  display:inline-block;
+  font-size: 20px;
+  position:relative;
+  bottom:7px;
+}
+
+#left-cont .label, #left-cont .ht{
+  display:inline-block;
+  vertical-align: top;
+}
+
 #header .cat-dropdown .cat-item:hover{
   background-color: #eeeeee;
   border:1px solid #bbbbbb;
@@ -194,6 +219,7 @@ body{
   text-align:center;
   padding-top: 20px;
   font-size: 30px;
+  color:#4d4d4d;
 }
 
 #header .bold{
@@ -208,7 +234,7 @@ body{
 #header .categories-button{
   background:white;
   border-radius:4px;
-  border:1px solid black;
+  border:1px solid #b3b3b3;
   padding:5px;
   width:130px;
   display:inline-block;
@@ -223,7 +249,7 @@ body{
   padding:5px;
   font-size: 16px;
   border-radius:4px;
-  border:1px solid black;
+  border:1px solid #b3b3b3;
   width:240px;
   
   background:url("/assets/mag.png") no-repeat right;
@@ -264,27 +290,27 @@ body{
 }
 
 .nav .home{
-  border-bottom:3px solid green;
+  border-bottom:4px solid #466675;
 }
 
 .nav .signup{
-  border-bottom:3px solid blue;
+  border-bottom:4px solid #67764e;
 }
 
 .nav .login{
-  border-bottom:3px solid red;
+  border-bottom:4px solid #ac8a72;
 }
 
 .nav .profile{
-  border-bottom:3px solid purple; 
+  border-bottom:4px solid #6a4a75; 
 }
 
 .nav .upload{
-  border-bottom:3px solid red;
+  border-bottom:4px solid #67764e;
 }
 
 .nav .logout{
-  border-bottom:3px solid blue;
+  border-bottom:4px solid #ac8a72;
 }
 
 #header .down-arrow{
@@ -334,6 +360,7 @@ body{
   right: 25px;
   padding-top: 20px;
   padding-bottom: 10px;
+  color:#4d4d4d;
 }
 
 .piece{
@@ -399,7 +426,7 @@ body{
   margin-right:20px;
   margin-bottom:20px;
   background-color: white;
-  border-radius:0px 0px 5px 5px;
+  
   overflow:hidden;
   border:2px solid #aaaaaa;
 }
@@ -407,6 +434,28 @@ body{
 .art-feed .piece .name{
   font-size: 18px;
   font-weight:bold;
+}
+
+.intro .w{
+  font-size: 28px;
+  font-weight:bold;
+}
+
+.intro{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+  margin-top: 20px;
+}
+
+.intro .part1{
+  font-size: 20px;
+}
+
+.intro .part2{
+  margin-right: auto;
+  margin-left: auto;
+  width:400px;
 }
 
 .art-feed .cont{
@@ -422,12 +471,70 @@ body{
   width:20px;
 }
 
+#sign-up, #login{
+  color:#4d4d4d;
+}
+
+#sign-up #title, #login #title{
+  font-size: 28px;
+  text-align: center;
+}
+
+#piece-dash{
+  background: black;
+  color:white;
+
+}
+
+#piece-dash .label{
+  font-size: 30px;
+}
+
+#piece-dash .content{
+  font-size: 20px;
+}
+
+#piece-dash #author{
+  font-size: 16px;
+}
+
+#piece-dash #description, #piece-dash #desired-feedback{
+  margin-top: 40px;
+}
+
+#piece-dash .label{
+  padding-bottom: 10px;
+}
 
 /* end feed stuff*/
 
+.part2{
+  margin-top: 20px;
+}
+
 #sign-up, #login{
-  margin-left:400px;
-  margin-top: 100px;
+  width:300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  background-color: #E0DFD9;
+  padding:40px;
+  border-radius: 10px;
+}
+
+#sign-up-button{
+  width:293px !important;
+  background-color: black;
+  color:white;
+  border-radius: 8px;
+}
+
+#sign-up input, #login input{
+  width:280px;
+  padding:5px;
+  font-size: 20px;
+  margin-top: 10px;
+  border:2px solid #b3b3b3;
 }
 
 #home #results{
@@ -588,6 +695,30 @@ body{
 
 /*end user dash*/
 
+#piece-dash #left{
+  padding-top: 30px;
+  padding-left: 30px;
+  width:400px;
+  border-right:1px solid #636363;
+  display:inline-block;
+  float:left;
+  padding-bottom: 400px;
+}
+
+#piece-dash{
+  display:inline-block;
+  width:100%;;
+}
+
+#piece-dash #right{
+  display:inline-block;
+  float: left;
+}
+
+.no{
+  color:#444444;
+}
+
 /*piece dashboard*/
 #piece-dash #title{
   font-size: 40px;
@@ -595,9 +726,52 @@ body{
   padding-top: 20px;
 }
 
-#piece-dash #author{
+#comments #heading{
+  margin-bottom: 10px;
+}
+
+.pr{
+  color:#444444;
+  padding-top: 15px;
+  padding-bottom: 20px;
   font-size: 24px;
-  padding-left: 40px;
+
+}
+
+.opt{
+  display:inline-block;
+
+}
+
+.sx2{
+  margin-left: 170px;
+}
+
+.tet{
+margin-top: 10px;
+}
+
+.xz{
+  width:270px;
+  height:70px;
+}
+
+.opt input, .opt a{
+  padding:10px;
+  font-size: 16px;
+  color:white;
+  background: black;
+  border-radius: 9px;
+  text-decoration: none;
+}
+
+#piece-dash #heading{
+  color:#444444;
+  font-size: 24px;
+  padding-top: 20px;
+}
+
+#piece-dash #author{
 }
 
 #piece-dash .version img{
@@ -607,9 +781,14 @@ body{
 
 #piece-dash .version{
   display:inline-block;
-  border:1px solid #aaaaaa;
+  
   margin-right:20px;
   margin-bottom: 20px;
+  line-height: 0;
+}
+
+.x{
+  margin-top: 20px;
 }
 
 #piece-dash #versions{
@@ -619,28 +798,59 @@ body{
 }
 
 #piece-dash .current{
-  box-shadow: 5px 5px 10px #888,0px 0px 10px #888; 
+  /*box-shadow: 5px 5px 10px #888,0px 0px 10px #888; */
 }
 
 #piece-dash #comments{
-  padding-left: 70px;
-  padding-right:70px;
+  padding-left: 40px;
+  padding-right:40px;
   margin-top: 20px;
 }
 
-#piece-dash .comment .commenter{
-  color:blue;
+#piece-dash #comments-cont{
+  border-radius: 10px;
+  background-color: white;
+  color:#333333;
+  /*overflow:hidden;*/
+  border:1px solid #b3b3b3;
 }
 
+.comment .edited-img img{
+  width:90px;
+  height: 90px;
+}
+
+.comment .edited-img{
+  display:inline-block;
+  padding-right: 15px;
+}
+
+.comment .content{
+  display:inline-block;
+  vertical-align: top;
+}
+
+.comment .text{
+  font-size: 16px;
+}
+
+#piece-dash .comment .commenter{
+  font-size: 20px;
+  font-weight:bold;
+}
+
+
+
 #piece-dash .comment{
-  border:1px solid #aaaaaa;
-  padding:10px;
-  margin-bottom: 15px;
+  
+  padding:20px;
+  border-bottom:1px solid #b3b3b3;
+  
 }
 
 #piece-dash .new_version{
-  position:relative;
-  bottom:120px;
+  vertical-align: top;
+  padding-top: 120px;
 }
 
 #piece-dash .details{
@@ -680,7 +890,7 @@ vertical-align: top;
 
 #comments .popup{
   position:absolute;
-  bottom:0px;
+  top:-290px;
   left:0px;
   display:none;
   background-color: white;
@@ -700,7 +910,7 @@ vertical-align: top;
   display:none;
   background-color: white;
   border:2px solid #999999;
-  border-radius:9px;
+  z-index:20;
   overflow:hidden; 
   padding:10px;
 }

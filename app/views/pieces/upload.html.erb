@@ -1,0 +1,11 @@
+<div class="upload">
+  <div class="instruct">
+    Upload your suggested edits for <%= @piece.title %>
+  </div>
+  <div class="original">
+    Current version:
+  </div>
+  <div class="img">
+    <%= image_tag @piece.piece_versions.last.piece_img(:square) %>
+  </div>
+</div>

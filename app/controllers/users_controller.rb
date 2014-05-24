@@ -5,9 +5,11 @@ class UsersController < ApplicationController
       return
     end
     @user = User.find(session[:user])
+    @page = "user"
   end
 
   def sign_up
+    @page = "signup"
   end
 
   def update
@@ -33,6 +35,7 @@ class UsersController < ApplicationController
   end
 
   def login
+    @page = "login"
   end
 
   def login_submit
