@@ -64,7 +64,7 @@ class PiecesController < ApplicationController
     image_data = Base64.decode64(data['data:image/png;base64,'.length .. -1])
     @comment.set_image(image_data)
     @comment.save
-    UserMailer.new_comment(@comment.piece.user, @comment.piece)
+    UserMailer.new_comment(@comment.piece.user, @comment.piece).deliver!
     render :text => "OK"
   end
 
