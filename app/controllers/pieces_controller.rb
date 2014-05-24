@@ -64,6 +64,7 @@ class PiecesController < ApplicationController
     image_data = Base64.decode64(data['data:image/png;base64,'.length .. -1])
     @comment.set_image(image_data)
     @comment.save
+    UserMailer.new_comment(@comment.piece.user, @comment.piece)
     render :text => "OK"
   end
 
@@ -80,6 +81,14 @@ class PiecesController < ApplicationController
 
   def annotate
     @piece_version = PieceVersion.find(params[:id])
+    @colors = ["#990000","#ff6666","#ff9999",
+      "#ff9900","#ff6600","#ff9933","#ff3300",
+      "#ffff33","#ffff99",
+      "#336633","#00cc33","#66ff99","#00ff33",
+      "#3399ff","#0066cc","#99ccff","#6699cc",
+      "#330066","#9900cc","#cc33ff","#cc66ff",
+      "#000000", "#888888","#bbbbbb","#ffffff"]
+    @thicks = ["small", "medium", "large", "huge"]
   end
 
   def tag

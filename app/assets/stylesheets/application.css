@@ -20,6 +20,49 @@
   
 }
 
+#annotate{
+  background-color: black;
+}
+
+#annotate-inner{
+  width:1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#interface{
+  vertical-align: top;
+  color:white;
+}
+
+#thickness{
+  margin-top: 10px;
+}
+
+#comment{
+  background-color: white;
+  color:black;
+  padding:10px;
+  border-radius:9px;
+}
+
+#tool{
+  margin-top: 10px;
+}
+
+#options .color{
+  width:22px;
+  height:22px;
+}
+
+#colors{
+  width:150px;
+}
+
+#interface #title{
+  font-size: 20px;
+}
+
 body{
   /*font-family:"proxima-nova";*/
   margin:0px;
@@ -44,9 +87,16 @@ body{
 }
 
 #annotate{
-  width:968px;
-  margin-left: auto;
-  margin-right: auto;
+
+}
+
+#interface{
+  display:inline-block;
+  width:350px;
+}
+
+#sketch{
+  display:inline-block;
 }
 
 .comments{
@@ -91,6 +141,7 @@ body{
 #header{
   height:80px;
   background-color: #CCCCCC;
+  box-shadow: 0px 5px 10px #888;
 }
 
 #header .cat-dropdown{
@@ -275,8 +326,12 @@ body{
 }
 
 .art-feed .title{
-  margin-left:480px;
+  margin-left:auto;
+  width:100px;
+  margin-right: auto;
   font-size: 28px;
+  position: relative;
+  right: 25px;
   padding-top: 20px;
   padding-bottom: 10px;
 }
@@ -297,7 +352,7 @@ body{
 
 .misc .likes{
   width:70px;
-  margin-left: 15px;
+  /*margin-left: 15px;*/
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -305,6 +360,11 @@ body{
 .misc .num{
   position:relative;
   bottom:4px;
+}
+
+#header a{
+  color:black;
+  text-decoration: none;
 }
 
 .misc{
@@ -319,9 +379,15 @@ body{
 }
 
 .misc .views{
-  width:100px;
+  width:70px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-left: 15px;
+}
+
+.heart-count{
+  position:relative;
+  bottom:4px;
 }
 
 .art-feed .misc div{
@@ -384,8 +450,22 @@ body{
   background-size: 40px 40px;
 }
 
+#new-piece-inner{
+  margin-left:auto;
+  margin-right: auto;
+  width:900px;
+  background-color: #E0DFD9;
+  margin-top: 20px;
+}
+
+#new-piece #title2{
+  font-size: 32px;
+  text-align: center;
+  padding: 20px;
+}
+
 #new-piece{
-  background-color: #dddddd;
+  
   padding-top: 20px;
   padding-bottom:100px;
 }
@@ -403,19 +483,25 @@ body{
 }
 
 #new-piece #upload{
-  margin-left:auto;
-  margin-right: auto;
-  width:200px;
-  height:200px;
+  height:250px;
   border-radius:8px;
-  border:2px dashed black;
+  border:2px solid black;
   background-color: white;
+  width:200px;
+  margin-left: 40px;
+  display:inline-block;
+  vertical-align: top;
+}
 
+#new-piece #text-fields{
+  display:inline-block;
+  width:600px;
+  margin-left: 40px;
 }
 
 #new-piece .section textarea{
   height:100px;
-  width:200px;
+  width:519px;
 }
 
 #new-piece #text-fields .section label{
@@ -423,12 +509,12 @@ body{
 }
 
 #new-piece #text-fields .section{
-  margin-top:20px;
+  margin-bottom:10px;
   font-size: 20px;
 }
 
 #new-piece #text-fields input{
-  width:180px;
+  width:500px;
   font-size: 14px;
   padding-top:10px;
   padding-bottom: 10px;
@@ -436,9 +522,7 @@ body{
 }
 
 #new-piece #text-fields{
-  margin-left:auto;
-  margin-right: auto;
-  width:200px;
+  /*width:200px;*/
 }
 /* user dash*/
 #user-dash{
@@ -570,7 +654,9 @@ body{
 
 
 /*end piece dashboard */
-
+#comment-field{
+  width:100px;
+}
 
 #comments .comment-img img{
   width:90px;

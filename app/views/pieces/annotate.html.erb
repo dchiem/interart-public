@@ -1,14 +1,14 @@
 
 <style>
   #sketch{
-    width:957px;
-    height:950px;
+    width:720px;
+    height:720px;
     border:1px solid black;
     background-size:cover;
   }
 
   #comment-field{
-    width:500px;
+    width:320px;
     height:100px;
   }
 
@@ -17,33 +17,50 @@
   }
 </style>
 <div id="annotate">
-  <div id="options">
-    <%= form_tag do %>
-      <%= submit_tag "black", :class => "color", :id => "black" %>
-      <%= submit_tag "purple", :class => "color", :id => "purple" %>
-      <%= submit_tag "green", :class => "color", :id => "green" %>
-      <%= submit_tag "yellow", :class => "color", :id => "yellow" %>
-      <%= submit_tag "brown", :class => "color", :id => "brown" %>
-      <%= submit_tag "small", :class => "size", :id => "small" %>
-      <%= submit_tag "medium", :class => "size", :id => "medium" %>
-      <%= submit_tag "large", :class => "size", :id => "large" %>
-      <%= submit_tag "huge", :class => "size", :id => "huge" %>
-      <%= submit_tag "marker", :class => "tool", :id => "marker" %>
-      <%= submit_tag "eraser", :class => "tool", :id => "eraser" %>
-    <% end %>
+  <div id="annotate-inner">
+    
+    <div id="sketch">
+      <canvas id="paint"></canvas>
+    </div>
+    <div id="interface">
+      <div id="title">
+        Title of this artwork: <%= @piece_version.piece.title %>
+      </div>
+      <div id="options">
+        <%= form_tag do %>
+          <div id="colors">
+            <% @colors.each do |c| %>
+              <%= submit_tag "", :class => "color", :id => c, :style => "background-color:" + c %>
+            <% end %>
+          </div>
+          <div id="thickness">
+            Line thickness:
+            <% @thicks.each do |t| %>
+              <%= submit_tag t, :class => "size", :id => t %>
+            <% end %>
+          </div>
+
+          <div id="tool">
+            Tool:
+            <%= submit_tag "marker", :class => "tool", :id => "marker" %>
+            <%= submit_tag "eraser", :class => "tool", :id => "eraser" %>  
+          </div>
+      
+          
+        <% end %>
+      </div>
+      <div id="comment">
+        <%= form_tag "/pieces/annotate_submit" do %>
+        <%= hidden_field_tag :piece_version_id, @piece_version.id %>
+        <%= hidden_field_tag :piece_id, @piece_version.piece.id %>
+          <div><%= User.find(session[:user]).username %></div>
+          <div><%= text_area_tag :comment, nil, :id => "comment-field", :placeholder => "Add a comment..." %></div>
+          <div><%= submit_tag "Save comment", :style => "margin-bottom:100px;", :id => 'save' %></div>
+        <% end %>
+      </div>  
+    </div>
+    
   </div>
-  <div id="sketch">
-  <canvas id="paint"></canvas>
-</div>
-<div id="comment">
-  <%= form_tag "/pieces/annotate_submit" do %>
-  <%= hidden_field_tag :piece_version_id, @piece_version.id %>
-  <%= hidden_field_tag :piece_id, @piece_version.piece.id %>
-    <div>Comments:</div>
-    <div><%= text_area_tag :comment, nil, :id => "comment-field" %></div>
-    <div><%= submit_tag "Save comment", :style => "margin-bottom:100px;", :id => 'save' %></div>
-  <% end %>
-</div>
 </div>
 
 <script type="text/javascript">
@@ -60,10 +77,10 @@
 
   
 function imageLoaded(){
-  canvas.width = 800;
-  canvas.height = 800;
+  canvas.width = 700;
+  canvas.height = 700;
   
-  canvas.getContext("2d").drawImage(image, 0, 0,800,800);
+  canvas.getContext("2d").drawImage(image, 0, 0,700,700);
   var context = canvas.getContext('2d');
    
   var sketch = document.querySelector('#sketch');
@@ -169,18 +186,8 @@ $(".size").click(function(){
 
 
 $(".color").click(function(){
-  var id = $(this).attr("id");
-  if(id === "black"){
-    curColor = colorBlack;
-  } else if(id === "purple"){
-curColor = colorPurple;
-  } else if(id === "green"){
-    curColor = colorGreen;
-  } else if(id === "yellow"){
-    curColor = colorYellow;
-  } else if(id === "brown"){
-    curColor = colorBrown;
-  }
+  var hex = $(this).attr("id");
+  curColor = hex;
   return false;
 });
     

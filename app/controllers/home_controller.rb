@@ -4,5 +4,6 @@ class HomeController < ApplicationController
       redirect_to "/users/login"
       return
     end
+    @show_filters = true
   end
 end

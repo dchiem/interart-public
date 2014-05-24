@@ -1,29 +1,33 @@
 <div id="header">
-  <div class="search">
-    <div class="categories-button">
-      <div class="text">
-        CATEGORIES
-      </div>
-      <div class="down-arrow">
-        
-      </div>
-    </div>
-    <div class="cat-dropdown">
-      <% Category.all.each do |c| %>
-        <div class="cat-item">
-          <%= c.name %>
+  <% if defined? @show_filters %>
+    <div class="search">
+      <div class="categories-button">
+        <div class="text">
+          CATEGORIES
         </div>
-      <% end %>
+        <div class="down-arrow">
+          
+        </div>
+      </div>
+      <div class="cat-dropdown">
+        <% Category.all.each do |c| %>
+          <div class="cat-item">
+            <%= c.name %>
+          </div>
+        <% end %>
+      </div>
+      <div class="tag">
+        <%= form_tag "/", :id => "xz" do %>
+          <%= text_field_tag :tag, nil, :placeholder => "search by tag", :id => "tag-field" %>
+        <% end %>
+      </div>
     </div>
-    <div class="tag">
-      <%= form_tag do %>
-        <%= text_field_tag :tag, nil, :placeholder => "search by tag", :id => "tag-field" %>
-      <% end %>
+  <% end %>
+  <%= link_to "/" do %>
+    <div class="title">
+      <span class="bold">INTER</span>ART
     </div>
-  </div>
-  <div class="title">
-    <span class="bold">INTER</span>ART
-  </div>
+  <% end %>
   <div class="nav">
     
     <% if current_user %>

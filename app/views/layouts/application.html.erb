@@ -41,14 +41,27 @@ function updateFeed(){
   });
 }
 
+$("#tag-field").keypress(function(e){
+  var code = e.which; 
+  if (code  == 13) {               
+    e.preventDefault();
+    return false;
+  }
+});
+
 $("#tag-field").keyup(function(){
   updateFeed();
-  return false;
 });
+
+
+
 
 $(".empty-heart").click(function(){
   $(this).hide();
   $(this).parents(".heart").find(".full-heart").show();
+  var count = parseInt($(this).parents(".heart").find(".heart-count").html());
+
+  $(this).parents(".heart").find(".heart-count").html(count + 1);
   var pieceId = $(this).parents(".piece").attr("piece-id");
   $.get("/pieces/heart/" + pieceId, function(){
 

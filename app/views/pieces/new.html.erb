@@ -1,58 +1,63 @@
 <div id="new-piece">
   <%= form_tag "/pieces/submit", :multipart => true do %>
   
-  
-    <div id="upload">
-      <div>
-        <%= image_tag "plus.jpeg" %>
-        <%= file_field_tag 'picture' %> 
+    <div id="new-piece-inner">
+      <div id="title2">
+        Upload a new artwork
       </div>
-    
-    </div>  
-    
-    <div id="text-fields">
-      <div class="section">
+      <div id="upload">
         <div>
-          <%= label_tag :title, "Title" %>
+          <%= image_tag "plus.jpeg" %>
+          <%= file_field_tag 'picture', :style=> "margin-top:60px" %> 
         </div>
-        <div>
-          <%= text_field_tag :title, nil, :placeholder => "title your artwork" %>
+      
+      </div>  
+      
+      <div id="text-fields">
+        <div class="section">
+          <div>
+            <%= label_tag :title, "Title" %>
+          </div>
+          <div>
+            <%= text_field_tag :title, nil, :placeholder => "title your artwork" %>
+          </div>
         </div>
-      </div>
-      <div class="section">
-        <div>
-          <%= label_tag :title, "Category" %>
+        <div class="section">
+          <div>
+            <%= label_tag :title, "Category" %>
+          </div>
+          <div>
+            <%= select_tag(:category_id, options_for_select(Category.all.collect {|a| [a.name, a.id]})) %>
+          </div>
         </div>
-        <div>
-          <%= select_tag(:category_id, options_for_select(Category.all.collect {|a| [a.name, a.id]})) %>
+        <div class="section">
+          <div>
+            <%= label_tag :tags, "Related Tags" %>
+          </div>
+          <div>
+            <%= text_field_tag :tags, nil, :placeholder => "Separated by commas" %>
+          </div>
         </div>
-      </div>
-      <div class="section">
-        <div>
-          <%= label_tag :tags, "Related Tags" %>
+        <div class="section">
+          <div>
+            <%= label_tag :description, "Describe your piece of art" %>
+          </div>
+          <div>
+            <%= text_area_tag :description, nil, :placeholder => "Description of piece here" %>
+          </div>
+        </div><div class="section">
+          <div>
+            <%= label_tag :desired_feedback, "Describe what kind of feedback you are looking for. For example technique or inspiration or direction etc" %>
+          </div>
+          <div>
+            <%= text_area_tag :desired_feedback, nil, :placeholder => "Describe desired feedback here" %>
+          </div>
         </div>
-        <div>
-          <%= text_field_tag :tags, nil, :placeholder => "Separated by commas" %>
+        <div class="section">
+          <%= submit_tag "Submit", :style => "margin-left:10px" %>
         </div>
-      </div>
-      <div class="section">
-        <div>
-          <%= label_tag :description, "Describe your piece of art" %>
-        </div>
-        <div>
-          <%= text_area_tag :description, nil, :placeholder => "Description of piece here" %>
-        </div>
-      </div><div class="section">
-        <div>
-          <%= label_tag :desired_feedback, "Describe what kind of feedback you are looking for. For example technique or inspiration or direction etc" %>
-        </div>
-        <div>
-          <%= text_area_tag :desired_feedback, nil, :placeholder => "Describe desired feedback here" %>
-        </div>
-      </div>
-      <div class="section">
-        <%= submit_tag "Submit", :style => "margin-left:10px" %>
-      </div>
+      </div>  
     </div>
+    
   <% end %> 
 </div>

@@ -15,18 +15,19 @@
       </div>
     </div>
     <div class="misc">
-      <div class="likes">
-        <%= image_tag "thumb.png" %>
-        <div class="num">
-          <%= piece.piece_likes.length %>
-        </div>
-      </div>
       <div class="views">
         <%= image_tag "eye.png" %>
         <div class="num">
-          <%= piece.view_count %>
+          <%= piece.view_count == nil ? 0 : piece.view_count %>
         </div>
       </div>
+      <div class="likes">
+        <%= image_tag "chat.png" %>
+        <div class="num">
+          <%= piece.piece_versions.last.comments.length %>
+        </div>
+      </div>
+      
       <div class="heart">
         <% if piece.is_liked_by(current_user) %>
         <%= image_tag "heart.png", :style => "display:none", :class => "empty-heart" %>
@@ -35,6 +36,9 @@
         <%= image_tag "heart.png", :class => "empty-heart" %>
         <%= image_tag "full-heart.png", :style => "display:none", :class => "full-heart"%>
         <% end %>
+        <div class="heart-count">
+          <%= piece.piece_likes.length %>
+        </div>
       </div>
     </div>
     <div class="popup">
