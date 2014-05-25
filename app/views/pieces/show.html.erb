@@ -43,9 +43,11 @@
       <% @piece.piece_versions.each do |pv| %>
         <div class="version <%= pv.version == @piece.piece_versions.length ? 'current' : '' %>">
           <div>Version <%= pv.version %></div>
+          <%= link_to "/pieces/annotate/" + pv.id.to_s do %>
           <div class="x" style="display:inline-block">
             <%= image_tag pv.url %>  
           </div>
+          <% end %>
         </div>
       <% end %>
       
@@ -93,10 +95,10 @@
               <div class="popup">
                 <%= image_tag c.edit_img(:square) %>
                 <% if c.user.artist_bio != nil %>
-                  Artist bio: <%= c.user.artist_bio %>
+                  <div>Artist bio: <%= c.user.artist_bio %></div>
                 <% end %>
                 <% if c.user.portfolio_link != nil %>
-                  Portfolio: <%= link_to c.user.portfolio_link %>
+                  <div>Portfolio: <%= link_to c.user.portfolio_link %></div>
                 <% end %>
               </div>
             </div>

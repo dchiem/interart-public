@@ -20,7 +20,19 @@
   
 }
 
+#new-piece .button{
+  background-color: #449999;
+  color:white;
+  border-radius:9px;
+  padding:10px;
+  width:80px;
+  margin-left: 50px;
+  margin-top: 15px;
+}
 
+#new-piece .file-name{
+  padding:10px;
+}
 
 #annotate{
   background-color: black;
@@ -655,6 +667,10 @@ body{
   float:left;
 
 }
+#edit-user{
+  margin-top: 60px;
+  margin-left: 50px;
+}
 
 #edit-user input{
   width:300px;
@@ -701,18 +717,20 @@ body{
   width:400px;
   border-right:1px solid #636363;
   display:inline-block;
-  float:left;
+  vertical-align: top;
   padding-bottom: 400px;
+  display:table-cell;
 }
 
 #piece-dash{
   display:inline-block;
-  width:100%;;
+  width:100%;
 }
 
 #piece-dash #right{
   display:inline-block;
-  float: left;
+  display:table-cell;
+  
 }
 
 .no{
@@ -792,8 +810,8 @@ margin-top: 10px;
 }
 
 #piece-dash #versions{
-  padding-left: 70px;
-  padding-right:70px;
+  padding-left: 30px;
+  padding-right:30px;
   margin-top: 20px;
 }
 
@@ -888,15 +906,21 @@ vertical-align: top;
   position:relative;
 }
 
+#comments .popup img{
+  width:400px;
+  height:400px;
+}
+
 #comments .popup{
   position:absolute;
-  top:-290px;
+  top:-200px;
   left:0px;
   display:none;
   background-color: white;
   border:2px solid #999999;
   border-radius:9px;
   overflow:hidden;
+  z-index:100;
 }
 
 #comments .comment:hover .popup{

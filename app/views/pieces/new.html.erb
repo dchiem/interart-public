@@ -8,7 +8,17 @@
       <div id="upload">
         <div>
           <%= image_tag "plus.jpeg" %>
-          <%= file_field_tag 'picture', :style=> "margin-top:60px" %> 
+          
+          
+          <div class="file-display">
+            <div class="button">
+              Upload file
+            </div>
+            <div class="file-name">
+              
+            </div>
+          </div>
+          <%= file_field_tag 'picture', :style=> "margin-top:60px;display:none;" , :id => "file-input"%> 
         </div>
       
       </div>  
@@ -54,10 +64,26 @@
           </div>
         </div>
         <div class="section">
-          <%= submit_tag "Submit", :style => "margin-left:10px" %>
+          <%= submit_tag "Submit", :class => "submt",:style => "margin-left:10px" %>
+          <%= image_tag "ajax-loader.gif", :class =>"loader", :style => "display:none" %>
         </div>
       </div>  
     </div>
     
   <% end %> 
 </div>
+
+<script type="text/javascript">
+  $(".button").click(function(){
+    $("#file-input").click();
+  });
+
+  $("#file-input").change(function(){
+    $(".file-name").html($(this).val());
+  });
+  
+  $(".submt").click(function(){
+    $(this).hide();
+    $(".loader").show();
+  });
+</script>

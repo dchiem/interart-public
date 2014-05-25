@@ -13,9 +13,6 @@ c1.save
 c2 = Category.new
 c2.name = "Drawing"
 c2.save
-c3 = Category.new
-c3.name = "Photography"
-c3.save
 c4 = Category.new
 c4.name = "Architecture"
 c4.save
