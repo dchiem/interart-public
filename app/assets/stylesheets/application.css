@@ -380,6 +380,10 @@ body{
   color:black;
 }
 
+.piece .cont{
+  height:84px;
+}
+
 .pieces{
   margin-top: 10px;
 }
