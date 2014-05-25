@@ -850,6 +850,13 @@ margin-top: 10px;
   padding-right: 15px;
 }
 
+#feedback{
+  position:fixed;
+  right:0px;
+  bottom:0px;
+  background-color: white;
+}
+
 .comment .content{
   display:inline-block;
   vertical-align: top;
