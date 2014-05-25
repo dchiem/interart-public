@@ -726,6 +726,7 @@ body{
   vertical-align: top;
   padding-bottom: 400px;
   display:table-cell;
+  max-width:400px;
 }
 
 #piece-dash{
