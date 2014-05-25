@@ -509,6 +509,7 @@ body{
 
 #piece-dash .content{
   font-size: 20px;
+  width:540px;
 }
 
 #piece-dash #author{
