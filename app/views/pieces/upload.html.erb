@@ -1,4 +1,4 @@
-<div class="upload">
+<div id="upload-edit">
   <div class="instruct">
     Upload your suggested edits for <%= @piece.title %>
   </div>
@@ -7,5 +7,14 @@
   </div>
   <div class="img">
     <%= image_tag @piece.piece_versions.last.piece_img(:square) %>
+  </div>
+  <div class="form">
+    <%= form_tag "/pieces/edit_upload", :multipart => true do %>
+      <%= hidden_field_tag :piece_id, @piece.id %>
+      <%= hidden_field_tag :piece_version_id, @piece.piece_versions.last.id %>
+      <%= file_field_tag :edits %>
+      <%= text_area_tag :comment %>
+      <%= submit_tag "Submit edits" %>
+    <% end %>
   </div>
 </div>

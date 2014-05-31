@@ -45,6 +45,18 @@ class PiecesController < ApplicationController
     redirect_to "/pieces/" + @comment.piece_id.to_s
   end
 
+  def edit_upload
+    
+    @comment = Comment.new
+    @comment.piece_id = params[:piece_id].to_i
+    @comment.content = params[:comment]
+    @comment.user_id = session[:user].to_i
+    @comment.edit_img = params[:edits]
+    @comment.piece_version_id = params[:piece_version_id].to_i
+    @comment.save
+    redirect_to "/pieces/" + @comment.piece_id.to_s
+  end
+
   def new_piece_version
     @piece = Piece.find(params[:piece_id])
     @piece_version = PieceVersion.new

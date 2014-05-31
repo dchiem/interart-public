@@ -697,6 +697,13 @@ body{
   font-size:18px;
 }
 
+#upload-edit{
+  width:800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
 #user-dash .section{
   margin-top: 20px;
 }
