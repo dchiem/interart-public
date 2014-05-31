@@ -713,6 +713,26 @@ body{
   padding:20px;
   background-color: black;
   display:inline-block;
+  height:190px;
+  position: relative;
+}
+
+#user-dash .piece .del img{
+  width:30px;
+  height:30px;
+}
+
+#user-dash .piece:hover .del{
+  display:block;
+}
+
+#user-dash .piece .del{
+  position: absolute;
+  top:0px;
+  right:0px;
+  display:none;
+
+
 }
 
 /*end user dash*/

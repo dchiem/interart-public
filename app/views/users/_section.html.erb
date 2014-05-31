@@ -7,7 +7,15 @@
       <%= link_to piece_path(p) do %>
         <div class="piece">
           <%= image_tag p.url %>
+          <% if title == "Your Artwork" %>
+            <%= link_to "/pieces/delete/" + p.id.to_s do %>
+              <div class="del">
+                <%= image_tag "delete.png" %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
+        
       <% end %>
     <% end %>
   </div>

@@ -11,6 +11,12 @@ class PiecesController < ApplicationController
     pl.save
   end
 
+  def delete
+    @p = Piece.find(params[:id])
+    @p.destroy
+    redirect_to user_path(session[:user])
+  end
+
   def submit
     @piece = Piece.new
     @piece.title = params[:title]
