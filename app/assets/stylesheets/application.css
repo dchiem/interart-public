@@ -824,7 +824,7 @@ body{
 #piece-dash #left{
   padding-top: 30px;
   padding-left: 30px;
-  width: 370px;
+  width: 350px;
   border-right: 5px solid white;
   display: inline-block;
   vertical-align: top;
@@ -832,6 +832,7 @@ body{
   display: table-cell;
   max-width: 400px;
   padding-right: 30px;
+  background-color: white;
 }
 
 #piece-dash{
@@ -843,6 +844,7 @@ body{
 #piece-dash #right{
   display:inline-block;
   display:table-cell;
+  /*box-shadow: -10px 0px 10px 1px #aaaaaa;*/
 }
 
 .no{
