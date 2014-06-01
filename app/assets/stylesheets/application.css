@@ -154,7 +154,7 @@ body{
 /*heaer stuff*/
 #header{
   height:80px;
-  background-color: #CCCCCC;
+  background-color: #000324;
   box-shadow: 0px 5px 10px #888;
 }
 
@@ -231,7 +231,7 @@ body{
   text-align:center;
   padding-top: 20px;
   font-size: 30px;
-  color:#4d4d4d;
+  color: #E5E8E3;
 }
 
 #header .bold{
@@ -279,8 +279,8 @@ body{
 }
 
 #header .nav img{
-  width:30px;
-  height:30px;
+  width: auto;
+  height: 20px;
   
 }
 
@@ -297,8 +297,10 @@ body{
 }
 
 #header .nav .word{
-  position:relative;
-  bottom:28px;
+  position: relative;
+  bottom: 22px;
+  margin-left: 4px;
+  padding-right: 7px;
 }
 
 .nav .home{
@@ -353,9 +355,10 @@ body{
   padding-top: 30px;
 }
 .art-feed{
-  background-color: #E0DFD9;
+  background-color: #EEF0ED;
   width:1025px;
   padding-left: 25px;
+  box-shadow: 0px 20px 50px #999;
 }
 
 .art-feed .category, .art-feed .tag{
@@ -372,7 +375,7 @@ body{
   right: 25px;
   padding-top: 20px;
   padding-bottom: 10px;
-  color:#4d4d4d;
+  color: #178F8F;
 }
 
 .piece{
@@ -413,14 +416,12 @@ body{
 
 .misc{
   border-top: 1px solid #ccc;
-  background-color: #ebebeb;
+  background-color: #D5DDE0;
 }
 
 .misc .heart{
-  border-left:1px solid #ccc;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 8px;
+  border-left: 1px solid #eee;
+  padding: 5px 5px 5px 15px;
 }
 
 .misc .views{
@@ -433,6 +434,7 @@ body{
 .heart-count{
   position:relative;
   bottom:4px;
+  margin-left: 3px;
 }
 
 .art-feed .misc div{
@@ -445,13 +447,13 @@ body{
   margin-bottom:20px;
   background-color: white;
   overflow:hidden;
-  border:1px solid #aaaaaa;
+  border: 1px solid #D6D5D5;
   border-radius: 8px;
 }
 
 .art-feed .piece .name{
   font-size: 18px;
-  font-weight: 400;
+  color: #178F8F;
 }
 
 .intro .w{
@@ -482,9 +484,11 @@ body{
 }
 
 .misc img{
-  width:30px;
+  width: auto;
   height:20px;
+  opacity: .6;
 }
+
 .likes img{
   width:20px;
 }
@@ -1002,7 +1006,9 @@ vertical-align: top;
   display:block;
 }
 
-
+.piece:hover {
+  box-shadow: 3px 3px 10px #aaa;
+}
 
 
 
