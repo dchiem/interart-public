@@ -12,6 +12,9 @@ def init
   end
 
   def is_liked_by(u)
+    if u == nil
+      return false
+    end
     piece_likes.each do |pl|
       if pl.user_id == u.id
         return true

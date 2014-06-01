@@ -99,6 +99,10 @@ class PiecesController < ApplicationController
   end
 
   def annotate
+    if session[:user] == nil
+      redirect_to "/users/login"
+      return
+    end
     @piece_version = PieceVersion.find(params[:id])
     @colors = ["#990000","#ff6666","#ff9999",
       "#ff9900","#ff6600","#ff9933","#ff3300",
@@ -117,6 +121,10 @@ class PiecesController < ApplicationController
   end
 
   def upload
+    if session[:user] == nil
+      redirect_to "/users/login"
+      return
+    end
     @piece = Piece.find(params[:id])
   end
 

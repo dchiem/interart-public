@@ -10,5 +10,6 @@
     <div><%= password_field_tag :password, nil, :placeholder => "Password" %></div>
     <div><%= submit_tag "Sign up", :id => "sign-up-button" %></div>
     <div style="margin-top:10px;font-size:20px;">Already have an account? <%= link_to "Login", "/users/login" %></div>
+    <div style="margin-top:10px;font-size:20px;">Just want to browse? <%= link_to "Enter here", "/home/landing" %></div>
   <% end %>
 </div>

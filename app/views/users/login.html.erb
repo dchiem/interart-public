@@ -8,5 +8,7 @@
     <div><%= password_field_tag :password,nil, :placeholder => "Password" %></div>
     <div><%= submit_tag "Login", :style => "width:293px;border-radius:8px;color:white;background:black" %></div>
     <div style="margin-top:10px;font-size:20px;">Don't have an account? <%= link_to "Sign Up", "/users/sign_up" %></div>
+    <div style="margin-top:10px;font-size:20px;">Just want to browse? <%= link_to "Enter here", "/home/landing" %></div>
   <% end %>
+
 </div>

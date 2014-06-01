@@ -186,16 +186,17 @@ body{
   box-shadow: 0px 5px 10px #888;
 }
 
-#header .cat-dropdown{
+#home .cat-dropdown{
   display:none;
   position:absolute;
-  top:54px;
+  top:32px;
   left:20px;
   background-color: white;
   border-radius:3px;
   border:1px solid black;
   width:200px;
   z-index:10;
+  margin-left: 560px;
   padding:3px;
 }
 
@@ -222,12 +223,12 @@ body{
   vertical-align: top;
 }
 
-#header .cat-dropdown .cat-item:hover{
+#home .cat-dropdown .cat-item:hover{
   background-color: #eeeeee;
   border:1px solid #bbbbbb;
 }
 
-#header .cat-dropdown .cat-item{
+#home .cat-dropdown .cat-item{
   display:block;
   padding:5px;
 
@@ -235,15 +236,17 @@ body{
 
 
 
-#header .categories-button{
+#home .categories-button{
   position: relative;
+  margin-left: 560px;
 }
 
-#header .search{
+#home .search{
   position: relative;
-  width:400px;
+  width:1000px;
   display:inline-block;
   float:left;
+  margin-bottom: 20px;
 }
 
 #header .nav{
@@ -267,11 +270,11 @@ body{
   
 }
 
-#header .categories-button div:not(.cat-dropdown):not(.cat-item){
+#home .categories-button div:not(.cat-dropdown):not(.cat-item){
   display:inline-block;
 }
 
-#header .categories-button{
+#home .categories-button{
   background:white;
   border-radius:4px;
   border:1px solid #b3b3b3;
@@ -280,12 +283,12 @@ body{
   display:inline-block;
 }
 
-#header .tag{
+#home .tag{
   display:inline-block;
 
 }
 
-#header #tag-field{
+#home #tag-field{
   padding:5px;
   font-size: 16px;
   border-radius:4px;
@@ -355,7 +358,7 @@ body{
   border-bottom:4px solid #E5E8E3;
 }
 
-#header .down-arrow{
+#home .down-arrow{
   width: 0; 
   height: 0; 
   border-left: 5px solid transparent;
@@ -367,8 +370,8 @@ body{
   left:4px;
 }
 
-#header .search{
-  padding-top:20px;
+#home .search{
+  padding-top:0px;
   padding-left:20px;
 }
 /*end header stuff*/
@@ -390,7 +393,7 @@ body{
 }
 
 .art-feed .category, .art-feed .tag{
-  margin-left:480px;
+  margin-left:0px;
   font-size: 18px;
 }
 
@@ -402,7 +405,7 @@ body{
   position: relative;
   right: 25px;
   padding-top: 20px;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
   color: #178F8F;
 }
 

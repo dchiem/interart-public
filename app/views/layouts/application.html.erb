@@ -39,7 +39,7 @@ function updateFeed(){
   }
 
   $.get("/pieces/tag", {tag:tagInput, category:category}, function(data){
-    $("#home").html(data);
+    $(".feed-cont").html(data);
   });
 }
 
