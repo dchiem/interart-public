@@ -21,21 +21,28 @@
 }
 
 #new-piece .button{
-  background-color: #449999;
-  color:white;
-  border-radius:9px;
-  padding:10px;
-  width:80px;
+  background-color: #0C5070;
+  color: white;
+  border-radius: 9px;
+  padding: 10px;
+  padding-left: 20px;
+  width: 69px;
   margin-left: 50px;
   margin-top: 15px;
 }
+
+ #new-piece .button:hover {
+   background-color: #F3B446;
+ }
 
 #new-piece .file-name{
   padding:10px;
 }
 
 #annotate{
-  background-color: black;
+  background-color: #E0E1E9;
+  margin-top: 10px;
+  padding: 30px;
 }
 
 #annotate-inner{
@@ -46,12 +53,26 @@
 
 #interface{
   vertical-align: top;
-  color:white;
+  color: #000324;
+  font-size: 15px;
 }
 
 #thickness{
   margin-top: 10px;
 }
+
+#interface input {
+  border: none;
+  font-size: 15px;
+  color: white;
+  background-color: #000324;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+ #interface input:hover {
+   background-color: #F3B446;
+ }
 
 #comment{
   background-color: white;
@@ -60,25 +81,32 @@
   border-radius:9px;
 }
 
+#comment .username {
+  margin-bottom: 10px;
+}
+
 #tool{
   margin-top: 10px;
 }
 
 #options .color{
-  width:22px;
-  height:22px;
+  width:35px;
+  height:35px;
+  border: none;
+  margin: 2px;
 }
 
 #colors{
-  width:150px;
+  width:300px;
 }
 
 #interface #title{
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 body{
-  margin:0px;
+  margin:10px;
   font-size: 13px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -86,7 +114,7 @@ body{
 
 /*piece show*/
 #comments{
-  background-color:#dddddd;
+  background-color:#EEF0ED;
   width:700px;
   margin-left: auto;
   margin-right: auto;
@@ -304,7 +332,7 @@ body{
 }
 
 .nav .home{
-  border-bottom:4px solid #466675;
+  border-bottom:4px solid #178F8F;
 }
 
 .nav .signup{
@@ -316,15 +344,15 @@ body{
 }
 
 .nav .profile{
-  border-bottom:4px solid #6a4a75; 
+  border-bottom:4px solid #F3B446;
 }
 
 .nav .upload{
-  border-bottom:4px solid #67764e;
+  border-bottom:4px solid #0C5070;
 }
 
 .nav .logout{
-  border-bottom:4px solid #ac8a72;
+  border-bottom:4px solid #E5E8E3;
 }
 
 #header .down-arrow{
@@ -376,11 +404,6 @@ body{
   padding-top: 20px;
   padding-bottom: 10px;
   color: #178F8F;
-}
-
-.piece{
-  height:358px;
-  color:black;
 }
 
 .piece .cont{
@@ -449,6 +472,8 @@ body{
   overflow:hidden;
   border: 1px solid #D6D5D5;
   border-radius: 8px;
+  height:358px;
+  color:black;
 }
 
 .art-feed .piece .name{
@@ -503,9 +528,7 @@ body{
 }
 
 #piece-dash{
-  background: black;
-  color:white;
-
+  color: #000324;
 }
 
 #piece-dash .label{
@@ -527,6 +550,7 @@ body{
 
 #piece-dash .label{
   padding-bottom: 10px;
+  color: #0C5070;
 }
 
 /* end feed stuff*/
@@ -581,17 +605,20 @@ body{
 }
 
 #new-piece-inner{
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
-  width:900px;
-  background-color: #E0DFD9;
+  width: 900px;
+  background-color: #EEF0ED;
   margin-top: 20px;
+  box-shadow: 0px 20px 50px #999;
+  padding-bottom: 20px;
 }
 
 #new-piece #title2{
   font-size: 32px;
   text-align: center;
   padding: 20px;
+  color: #0C5070;
 }
 
 #new-piece{
@@ -615,7 +642,7 @@ body{
 #new-piece #upload{
   height:250px;
   border-radius:8px;
-  border:2px solid black;
+  border: 1px solid #0C5070;
   background-color: white;
   width:200px;
   margin-left: 40px;
@@ -630,8 +657,12 @@ body{
 }
 
 #new-piece .section textarea{
-  height:100px;
-  width:519px;
+  height: 100px;
+  width: 500px;
+  border: 1px solid #0C5070;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
 }
 
 #new-piece #text-fields .section label{
@@ -644,11 +675,23 @@ body{
 }
 
 #new-piece #text-fields input{
-  width:500px;
+  width: 500px;
   font-size: 14px;
-  padding-top:10px;
+  padding-top: 10px;
   padding-bottom: 10px;
+  border: 1px solid #0C5070;
   padding-left: 20px;
+  border-radius: 10px;
+}
+
+ #new-piece #text-fields .submt{
+   background-color: #0C5070;
+   color: #EEF0ED;
+}
+
+#new-piece #text-fields .submt:hover{
+  background-color: #F3B446;
+  border: none;
 }
 
 #new-piece #text-fields{
@@ -660,9 +703,10 @@ body{
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
-  background-color: #E0DFD9;
+  background-color: #EEF0ED;
   padding:20px;
   margin-top: 20px;
+  box-shadow: 0px 20px 50px #999;
 }
 
 .info-full{
@@ -670,14 +714,15 @@ body{
 }
 
 #user-dash .top{
-  height:40px;
+  height: 30px;
 }
 
 #user-dash .title2{
   font-size: 30px;
   float:left;
-
+  color: #F3B446;
 }
+
 #edit-user{
   margin-top: 60px;
   margin-left: 50px;
@@ -713,8 +758,9 @@ body{
 }
 
 #user-dash .piece img{
-  width:190px;
-  height:190px;
+  width: 190px;
+  height: 190px;
+  border-radius: 10px;
 }
 
 #user-dash .pieces{
@@ -722,29 +768,55 @@ body{
 }
 
 #user-dash .piece{
-  padding:20px;
-  background-color: black;
+  margin: 20px;
   display:inline-block;
-  height:190px;
   position: relative;
+  border: 1px solid #D5DDE0;
+  border-radius: 10px;
+}
+
+#piece-dash .piece {
+  height:358px;
+  color:black;
 }
 
 #user-dash .piece .del img{
-  width:30px;
-  height:30px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 6px;
+  left: -6px;
 }
 
 #user-dash .piece:hover .del{
   display:block;
 }
 
+ #user-dash .del:hover .overlay{
+   display:block;
+ }
+
+#user-dash .overlay:hover{
+  display: none !important;
+}
+
 #user-dash .piece .del{
   position: absolute;
-  top:0px;
-  right:0px;
-  display:none;
+  top: 0px;
+  right: 0px;
+  display: none;
+}
 
-
+#user-dash .piece .overlay {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 190px;
+  width: 190px;
+  background-color: #EEF0ED;
+  opacity: 0.7;
+  border-radius: 10px;
+  display: none;
 }
 
 /*end user dash*/
@@ -752,24 +824,27 @@ body{
 #piece-dash #left{
   padding-top: 30px;
   padding-left: 30px;
-  width:400px;
-  border-right:1px solid #636363;
-  display:inline-block;
+  width: 370px;
+  border-right: 5px solid white;
+  display: inline-block;
   vertical-align: top;
   padding-bottom: 400px;
-  display:table-cell;
-  max-width:400px;
+  display: table-cell;
+  max-width: 400px;
+  padding-right: 30px;
+  background: #E0E1E9;
 }
 
 #piece-dash{
   display:inline-block;
   width:100%;
+  background: #E0E1E9;
 }
 
 #piece-dash #right{
   display:inline-block;
   display:table-cell;
-  
+  background: #E0E1E9;
 }
 
 .no{
@@ -797,7 +872,7 @@ body{
 
 .opt{
   display:inline-block;
-
+  margin: 10px;
 }
 
 .sx2{
@@ -808,18 +883,41 @@ body{
 margin-top: 10px;
 }
 
+.tet input{
+  border: none;
+  background-color: #0C5070;
+  color: white;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+ .tet input:hover{
+   background-color: #F3B446;
+ }
+
 .xz{
-  width:270px;
-  height:70px;
+  width: 298px;
+  height: 70px;
+  border: solid 1px #B0C0C7;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .opt input, .opt a{
   padding:10px;
   font-size: 16px;
   color:white;
-  background: black;
+  background: #0C5070;
   border-radius: 9px;
   text-decoration: none;
+  border: none;
+}
+
+.opt a:hover, .opt input:hover {
+  background-color: #F3B446;
 }
 
 #piece-dash #heading{
@@ -834,6 +932,8 @@ margin-top: 10px;
 #piece-dash .version img{
   width:248px;
   height:248px;
+  border-radius: 10px;
+  border: 2px solid #D5DDE0;
 }
 
 #piece-dash .version{
@@ -844,8 +944,8 @@ margin-top: 10px;
   line-height: 0;
 }
 
-.x{
-  margin-top: 20px;
+#piece-dash .version .version-title {
+  padding-bottom: 20px;
 }
 
 #piece-dash #versions{
@@ -861,7 +961,8 @@ margin-top: 10px;
 #piece-dash #comments{
   padding-left: 40px;
   padding-right:40px;
-  margin-top: 20px;
+  margin: 20px;
+  border-radius: 10px;
 }
 
 #piece-dash #comments-cont{
@@ -917,7 +1018,7 @@ margin-top: 10px;
 
 #piece-dash .new_version{
   vertical-align: top;
-  padding-top: 120px;
+  padding-top: 85px;
 }
 
 #piece-dash .details{
@@ -963,13 +1064,13 @@ vertical-align: top;
 #comments .popup{
   position:absolute;
   top:-200px;
-  left:0px;
+  left: -420px;
   display:none;
   background-color: white;
-  border:2px solid #999999;
   border-radius:9px;
   overflow:hidden;
   z-index:100;
+  box-shadow: 0px 0px 30px #888;
 }
 
 #comments .comment:hover .popup{

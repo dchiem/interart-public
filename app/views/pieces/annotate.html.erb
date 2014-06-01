@@ -3,17 +3,19 @@
   #sketch{
     width:720px;
     height:720px;
-    border:1px solid black;
     background-size:cover;
   }
 
   #comment-field{
-    width:320px;
+    width:300px;
     height:100px;
+    border: solid 1px #D5DDE0;
+    padding: 10px;
   }
 
   #comment{
     margin-top:30px;
+    box-shadow: 0px 20px 50px #999;
   }
 </style>
 <div id="annotate">
@@ -53,7 +55,7 @@
         <%= form_tag "/pieces/annotate_submit" do %>
         <%= hidden_field_tag :piece_version_id, @piece_version.id %>
         <%= hidden_field_tag :piece_id, @piece_version.piece.id %>
-          <div><%= User.find(session[:user]).username %></div>
+          <div class="username"><%= User.find(session[:user]).username %></div>
           <div><%= text_area_tag :comment, nil, :id => "comment-field", :placeholder => "Add a comment..." %></div>
           <div><%= submit_tag "Save comment", :style => "margin-bottom:20px;", :id => 'save' %><%= image_tag "ajax-loader.gif", :class =>"loader", :style => "display:none" %></div>
         <% end %>

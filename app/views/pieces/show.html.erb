@@ -42,7 +42,7 @@
     <div id="versions">
       <% @piece.piece_versions.each do |pv| %>
         <div class="version <%= pv.version == @piece.piece_versions.length ? 'current' : '' %>">
-          <div>Version <%= pv.version %></div>
+          <div class="version-title">Version <%= pv.version %></div>
           <%= link_to "/pieces/annotate/" + pv.id.to_s do %>
           <div class="x" style="display:inline-block">
             <%= image_tag pv.url %>  
