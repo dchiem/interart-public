@@ -1,5 +1,5 @@
 class PieceVersion < ActiveRecord::Base
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :piece
   has_attached_file :piece_img, :styles => {
     square: '800x800>'
