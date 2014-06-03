@@ -13,7 +13,8 @@ class PiecesController < ApplicationController
 
   def delete
     @p = Piece.find(params[:id])
-    
+    @p.comments.each{|c| c.destroy}
+    @p.piece_versions.each{|d| d.destroy}
     @p.destroy
     redirect_to user_path(session[:user])
   end
