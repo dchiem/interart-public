@@ -1,7 +1,7 @@
 class Piece < ActiveRecord::Base
   belongs_to :user
-  has_many :piece_versions
-  has_many :comments, :through => :piece_versions
+  has_many :piece_versions, dependent: :destroy
+  has_many :comments, :through => :piece_versions, dependent: :destroy
   has_and_belongs_to_many :tags
   belongs_to :category
   has_many :piece_likes  
