@@ -106,22 +106,18 @@
           <% end %>
         </div>
       <% end %>
+      <% if false %>
       <div class="pr">
         Add comment by:
       </div>
+      <% end %>
       <%= form_tag do %>
         <div class="opt">
-          <%= submit_tag "Edit/comment online with Interart tool", :class => 'sx2' %>
+          <%= submit_tag "Annotate and comment with Interart tool", :class => 'sx2' %>
         </div>
-        <div style="margin-left:280px;font-size:28px;color:#444444;margin-top:30px;margin-bottom:20px;">or</div>
-        <div class="opt">
-          <%= link_to "Download to edit with your own tool", "/pieces/download/" + @piece.id.to_s , :class => "sx1" %>
-        </div>
-        <span style="color:#444444">and then</span>
-        <div class="opt">
-          <%= link_to "Upload suggested changes", "/pieces/upload/" + @piece.id.to_s %>
-        </div>
+        <% if false %>
         
+        <% end %>
       <% end %>
     </div>
   </div>

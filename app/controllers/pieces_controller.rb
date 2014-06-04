@@ -13,7 +13,7 @@ class PiecesController < ApplicationController
 
   def delete
     @p = Piece.find(params[:id])
-    
+
     @p.destroy
     redirect_to user_path(session[:user])
   end
@@ -143,7 +143,9 @@ class PiecesController < ApplicationController
     elsif params[:category]
       pieces = pieces.select{|p| p.category.name == params[:category].strip}
     end
-
+    if pieces.length == 0
+      pieces = Piece.all
+    end
     @tag = params[:tag]
 
     

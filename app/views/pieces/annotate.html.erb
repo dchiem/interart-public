@@ -51,15 +51,26 @@
           
         <% end %>
       </div>
+
       <div id="comment">
         <%= form_tag "/pieces/annotate_submit" do %>
-        <%= hidden_field_tag :piece_version_id, @piece_version.id %>
-        <%= hidden_field_tag :piece_id, @piece_version.piece.id %>
+          
+          <%= hidden_field_tag :piece_version_id, @piece_version.id %>
+          <%= hidden_field_tag :piece_id, @piece_version.piece.id %>
           <div class="username"><%= User.find(session[:user]).username %></div>
           <div><%= text_area_tag :comment, nil, :id => "comment-field", :placeholder => "Add a comment..." %></div>
           <div><%= submit_tag "Save comment", :style => "margin-bottom:20px;", :id => 'save' %><%= image_tag "ajax-loader.gif", :class =>"loader", :style => "display:none" %></div>
         <% end %>
       </div>  
+<div style="margin-left:160px;font-size:28px;color:#444444;margin-top:10px;margin-bottom:0px;">or</div>
+        
+      <div class="opt" style='margin-top:20px;margin-left:35px;'>
+            <%= link_to "Download to edit with your own tool", "/pieces/download/" + @piece_version.piece.id.to_s , :class => "sx1" %>
+          </div>
+          <div style="color:#444444; margin-top:5px;margin-bottom:8px; margin-left:165px;">and</div>
+          <div class="opt" style="margin-left:60px;">
+            <%= link_to "Upload suggested changes", "/pieces/upload/" + @piece_version.piece.id.to_s %>
+          </div>
     </div>
     
   </div>

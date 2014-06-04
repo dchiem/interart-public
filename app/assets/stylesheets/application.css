@@ -1107,12 +1107,13 @@ vertical-align: top;
 }
 
 .piece:hover .popup{
-  display:block;
+  /*display:block;*/
 }
 
 .piece:hover {
   box-shadow: 3px 3px 10px #aaa;
 }
+
 
 
 
