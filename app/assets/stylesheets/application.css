@@ -20,6 +20,21 @@
   
 }
 
+#marker:hover, #eraser:hover{
+  background-color: #F3B446 !important;
+}
+
+#marker,#eraser{
+  background-color: transparent !important;
+  width:34px;
+  height:34px;
+}
+
+#marker.selected,#eraser.selected{
+  background-color: #F3B446 !important; 
+}
+
+
 #new-piece .button{
   background-color: #0C5070;
   color: white;
